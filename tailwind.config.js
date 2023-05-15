@@ -11,10 +11,15 @@ module.exports = {
         white: '#f8f8f8',
         black: '#0a0a0a',
       },
+      fontSize: {
+        '3xl': ['2rem', 1.0625],
+        '4xl': ['4rem', 1],
+      },
       screens: {
+        xs: '500px',
         '3xl': '1920px',
       },
     },
   },
   plugins: [],
-}
+};
