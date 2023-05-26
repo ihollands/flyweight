@@ -8,6 +8,10 @@
     @apply bg-white text-black font-medium tracking-tighter relative pb-10;
   }
 
+  main {
+    @apply max-w-7xl mx-auto;
+  }
+
   p {
     @apply text-2xl mb-6 last:mb-0;
   }
