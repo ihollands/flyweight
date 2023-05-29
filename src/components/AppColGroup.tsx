@@ -27,8 +27,8 @@ export default function AppColGroup({ cols }: Props) {
             {items.map(({ head, body }, idx) => {
               return (
                 <li key={idx}>
-                  <p className="mb-0 text-base">✹ {head}</p>
-                  {body && <p className="text-base">{body}</p>}
+                  {head ? <p className="mb-0 text-base">✹ {head}</p> : <br />}
+                  {body && <p className="text-base last:pb-4">{body}</p>}
                 </li>
               );
             })}
