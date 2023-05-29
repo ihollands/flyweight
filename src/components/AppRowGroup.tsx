@@ -1,19 +1,33 @@
+import { transitionVisible } from '@/helpers/utils';
+
 interface Row {
   head: string;
   body: string;
 }
 
 interface Props {
+  isVisible: boolean;
   rows: Row[];
 }
 
-export default function AppRowGroup({ rows }: Props) {
+const transitionClass = transitionVisible([
+  'flex justify-between border-t border-black py-6 transition-all duration-1000 ease-out',
+  'opacity-0 translate-y-1/4',
+  'opacity-100 translate-y-0',
+]);
+
+export default function AppRowGroup({ isVisible, rows }: Props) {
+  const itemIdxRange = [...Array.from({ length: rows.length }, (x, i) => i)];
+
   return (
     <div className="border-b border-black">
       {rows.map(({ head, body }, idx) => (
         <div
           key={idx}
-          className="flex justify-between border-t border-black py-6"
+          className={transitionClass(isVisible)}
+          style={{
+            transitionDelay: `${500 + idx * 200}ms`,
+          }}
         >
           <h3 className="mb-0 w-1/2">✹ {head}</h3>
           <p className="w-1/2 text-base">{body}</p>
