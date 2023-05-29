@@ -26,7 +26,7 @@ export default function AppRowGroup({ isVisible, rows }: Props) {
           key={idx}
           className={transitionClass(isVisible)}
           style={{
-            transitionDelay: `${750 + idx * 200}ms`,
+            transitionDelay: `${500 + idx * 200}ms`,
           }}
         >
           <h3 className="mb-0 w-1/2">✹ {head}</h3>
