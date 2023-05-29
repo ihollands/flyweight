@@ -23,7 +23,8 @@ export default function AppNumGroup({ isVisible, items }: Props) {
 
   useEffect(() => {
     setTransitionOrder(shuffleArray(transitionOrder));
-  }, [transitionOrder, items]);
+    //eslint-disable-next-line
+  }, []);
 
   const displayNum = (idx: number): string => {
     const num = idx + 1;
