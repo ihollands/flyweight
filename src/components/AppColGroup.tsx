@@ -10,10 +10,11 @@ interface Col {
 }
 
 interface Props {
+  isVisible: boolean;
   cols: Col[];
 }
 
-export default function AppColGroup({ cols }: Props) {
+export default function AppColGroup({ isVisible, cols }: Props) {
   return (
     <div className="flex flex-col gap-10 lg:flex-row">
       {cols.map(({ title, intro, items }, idx) => (

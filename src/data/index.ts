@@ -29,7 +29,10 @@ const data = {
     blurb: `Leaner and meaner brand design.<br />Heavy hitting creative power meets<br/>a nimble project approach.`,
   },
   section_1: {
-    body: `<p>All it takes is one great designer.</p><p>We’ve eliminated the office and the agency overhead, connecting clients directly with the best design talent. This streamlined approach gives us three unfair advantages. 1) We’re not constrained by hiring geography. This opens up the talent pool, so we can be more discerning about who we invite to join our platform. 2) We are able to maintain the highest creative standards, while keeping costs to a minimum. The result is clients get more bang for their buck 3) With fewer mouths to feed, we as designers earn more per project than just about anywhere else.</p>`,
+    items: [
+      'All it takes is one great designer.',
+      'We’ve eliminated the office and the agency overhead, connecting clients directly with the best design talent. This streamlined approach gives us three unfair advantages. 1) We’re not constrained by hiring geography. This opens up the talent pool, so we can be more discerning about who we invite to join our platform. 2) We are able to maintain the highest creative standards, while keeping costs to a minimum. The result is clients get more bang for their buck 3) With fewer mouths to feed, we as designers earn more per project than just about anywhere else.',
+    ],
   },
   section_2: {
     rows: [
@@ -95,13 +98,15 @@ const data = {
             head: 'Stock photo library (15-20 images)',
             body: 'Don’t have money for a photo shoot yet? No problem. We can source and pull imagery for you to use on web, social media, and more.',
           },
+          {
+            head: '',
+            body: "Something you need that's not here? Reach out to us. (We also design compnay swag, homepages, social posts, and more)",
+          },
         ],
       },
     ],
   },
   section_4: {
-    blurb:
-      'We’ll be the first to tell you, our approach is not for everybody. We believe it’s important to be upfront about our way of working to make sure our prospective partners are the right fit. We operate based on a few key principles.',
     items: [
       {
         head: 'No hand holding.',

@@ -10,6 +10,7 @@ import AppSection from '@/components/AppSection';
 import AppRowGroup from '@/components/AppRowGroup';
 import AppColGroup from '@/components/AppColGroup';
 import AppNumGroup from '@/components/AppNumGroup';
+import AppPBlock from '@/components/AppPBlock';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -44,42 +45,59 @@ export default function Home() {
             className="xl:flex"
             navItem={data.nav_items[0]}
           >
-            <div
-              className={classNames('w-full')}
-              dangerouslySetInnerHTML={{ __html: data.section_1.body }}
-            />
+            {(isVisible) => (
+              <AppPBlock
+                className="w-full"
+                items={data.section_1.items}
+                isVisible={isVisible}
+              />
+            )}
           </AppSection>
 
           <AppSection navItem={data.nav_items[1]}>
-            <AppRowGroup rows={data.section_2.rows} />
+            {(isVisible) => (
+              <AppRowGroup
+                rows={data.section_2.rows}
+                isVisible={isVisible}
+              />
+            )}
           </AppSection>
 
           <AppSection
             className="constrain mx-auto border-2 border-black px-16 py-12"
             navItem={data.nav_items[2]}
           >
-            <AppColGroup cols={data.section_3.cols} />
+            {(isVisible) => (
+              <AppColGroup
+                cols={data.section_3.cols}
+                isVisible={isVisible}
+              />
+            )}
           </AppSection>
 
-          <AppSection
-            blurb={data.section_4.blurb}
-            navItem={data.nav_items[3]}
-          >
-            <AppNumGroup items={data.section_4.items} />
+          <AppSection navItem={data.nav_items[3]}>
+            {(isVisible) => (
+              <AppNumGroup
+                items={data.section_4.items}
+                isVisible={isVisible}
+              />
+            )}
           </AppSection>
 
-          <AppSection navItem={data.nav_items[4]} />
+          {/*<AppSection navItem={data.nav_items[4]} />*/}
         </div>
       </main>
 
       <AppSection navItem={data.nav_items[5]}>
-        <AppHero>
-          <span className="flex flex-col items-start">
-            <AppLink href="mailto:placeholder@flyweight.com">Email</AppLink>
-            <AppLink href="https://www.instagram.com/explore/tags/flyweight/">Instagram</AppLink>
-            <AppLink href="https://www.linkedin.com">LinkedIn</AppLink>
-          </span>
-        </AppHero>
+        {() => (
+          <AppHero>
+            <span className="flex flex-col items-start">
+              <AppLink href="mailto:placeholder@flyweight.com">Email</AppLink>
+              <AppLink href="https://www.instagram.com/explore/tags/flyweight/">Instagram</AppLink>
+              <AppLink href="https://www.linkedin.com">LinkedIn</AppLink>
+            </span>
+          </AppHero>
+        )}
       </AppSection>
     </div>
   );
