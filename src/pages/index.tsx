@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 import data from '@/data/index';
 
+import AppNav from '@/components/AppNav';
 import AppLink from '@/components/AppLink';
 import AppHero from '@/components/AppHero';
 import AppSection from '@/components/AppSection';
@@ -18,7 +19,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <div className="space-y-40">
+    <div className="space-y-20 lg:space-y-32 xl:space-y-40">
       <Head>
         <title>Flyweight: Brand Design</title>
       </Head>
@@ -27,7 +28,7 @@ export default function Home() {
         nav={true}
         classes={{
           outer: 'xl:min-h-[80vh]',
-          inner: 'mt-40 xl:mt-[20vw]',
+          inner: 'mt-40 md:mt-72 xl:mt-[20vw]',
         }}
         image={{
           src: '/images/boxer_1.jpg',
@@ -64,7 +65,7 @@ export default function Home() {
           </AppSection>
 
           <AppSection
-            className="constrain mx-auto border-2 border-black px-16 py-12"
+            className="constrain mx-auto border-2 border-black p-5 lg:p-16"
             navItem={data.nav_items[2]}
           >
             {(isVisible) => (
@@ -88,11 +89,21 @@ export default function Home() {
         </div>
       </main>
 
-      <AppSection navItem={data.nav_items[5]}>
+      <AppSection
+        headerClass="pad-global"
+        navItem={data.nav_items[5]}
+      >
         {() => (
-          <AppHero>
+          <AppHero
+            image={{
+              src: '/images/phone_1.jpg',
+              alt: 'Phone',
+              width: 324,
+              height: 324,
+            }}
+          >
             <span className="flex flex-col items-start">
-              <AppLink href="mailto:placeholder@flyweight.com">Email</AppLink>
+              <AppLink href="mailto:peter@flyweight.xyz">Email</AppLink>
               <AppLink href="https://www.instagram.com/explore/tags/flyweight/">Instagram</AppLink>
               <AppLink href="https://www.linkedin.com">LinkedIn</AppLink>
             </span>

@@ -11,7 +11,7 @@ interface Props {
 }
 
 const transitionClass = transitionVisible([
-  'flex justify-between border-t border-black py-6 transition-all duration-1000 ease-out',
+  'lg:flex justify-between border-t border-black py-6 transition-all duration-1000 ease-out',
   'opacity-0 translate-y-1/4',
   'opacity-100 translate-y-0',
 ]);
@@ -29,8 +29,8 @@ export default function AppRowGroup({ isVisible, rows }: Props) {
             transitionDelay: `${750 + idx * 200}ms`,
           }}
         >
-          <h3 className="mb-0 w-1/2">✹ {head}</h3>
-          <p className="w-1/2 text-base">{body}</p>
+          <h3 className="w-full lg:mb-0">✹ {head}</h3>
+          <p className="w-full text-base">{body}</p>
         </div>
       ))}
     </div>

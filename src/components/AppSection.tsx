@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import classNames from 'classnames';
 import { transitionVisible } from '@/helpers/utils';
 
 import useVisible from '@/hooks/visible';
@@ -9,6 +10,7 @@ interface NavItem {
 }
 
 interface SectionProps {
+  headerClass?: string;
   blurb?: string;
   className?: string;
   children?: (isVisible: boolean) => ReactNode;
@@ -21,7 +23,13 @@ const transitionClass = transitionVisible([
   'translate-y-0 opacity-100',
 ]);
 
-export default function AppSection({ blurb, className, children, navItem }: SectionProps) {
+export default function AppSection({
+  blurb,
+  headerClass,
+  className,
+  children,
+  navItem,
+}: SectionProps) {
   const { elRef, isVisible } = useVisible({ rootMargin: '-100px' });
   return (
     <div
@@ -29,7 +37,7 @@ export default function AppSection({ blurb, className, children, navItem }: Sect
       className={className}
       id={navItem.id}
     >
-      <h2 className="mb-16 w-full">
+      <h2 className={classNames('mb-8 w-full lg:mb-16', headerClass)}>
         {navItem.text.split(' ').map((word, idx) => (
           <span
             className={transitionClass(isVisible)}

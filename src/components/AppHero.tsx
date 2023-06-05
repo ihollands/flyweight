@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { ReactNode } from 'react';
 import classNames from 'classnames';
-import HeroNav from '@/components/HeroNav';
+import AppNav from '@/components/AppNav';
 
 interface Props {
   classes?: {
@@ -18,6 +18,18 @@ interface Props {
 }
 
 export default function AppHero({ classes, image, children, nav = false }: Props) {
+  const Title = ({ className, textClass }: { className?: string; textClass?: string }) => (
+    <h1
+      className={classNames(
+        'pointer-events-none -ml-[1.5vw] mb-14 origin-top-left font-medium leading-none tracking-tight transition-all duration-500',
+        className,
+        textClass ? textClass : 'hero-title'
+      )}
+    >
+      Flyweight
+    </h1>
+  );
+
   return (
     <div className={classNames('relative', classes?.outer)}>
       <div className={classNames('pad-global', classes?.inner)}>
@@ -37,11 +49,21 @@ export default function AppHero({ classes, image, children, nav = false }: Props
               />
             </div>
           )}
-          <h1 className="pointer-events-none relative -ml-[1.5vw] mb-14 text-[22.9vw] font-medium leading-none tracking-tight 3xl:text-[29rem]">
-            Flyweight
-          </h1>
+          {nav ? (
+            <AppNav>
+              {({ className, textClass }) => (
+                <Title
+                  className={className}
+                  textClass={textClass}
+                />
+              )}
+            </AppNav>
+          ) : (
+            <div className="pointer-events-none relative">
+              <Title />
+            </div>
+          )}
         </div>
-        {nav && <HeroNav />}
       </div>
     </div>
   );
