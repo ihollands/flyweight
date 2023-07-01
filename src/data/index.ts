@@ -10,7 +10,7 @@ const data = {
     },
     {
       id: 'deliverables',
-      text: 'Deliverables',
+      text: 'The Deliverables',
     },
     {
       id: 'code_of_conduct',
@@ -58,7 +58,7 @@ const data = {
       },
       {
         head: 'Online Interface',
-        body: 'We’ve made it easy to connect and collaborate. All communication, meetings, and presentations are all run through a simple email interface and Google hangouts.',
+        body: 'We’ve made it easy to connect and collaborate. All communication, meetings, and presentations are all run through a simple email interface and Google Meet.',
       },
     ],
   },
@@ -72,15 +72,15 @@ const data = {
           { head: 'Logo & lock up' },
           { head: 'Color palette' },
           { head: 'Typography' },
+          { head: 'Graphic elements of design system' },
           { head: '4-6 branded icons' },
           { head: 'Initial photo art direction' },
-          { head: '8-10 example applications' },
-          { head: 'High-level guidelines' },
+          { head: '8-10 examples of design in action' },
+          { head: 'High-level design guidelines' },
           { head: '', body: '' },
-          { head: '', body: 'Depending on design:' },
-          { head: 'Illustration style (if warranted)' },
-          { head: 'Graphic shapes / lines (if warranted)' },
-          { head: 'Image treatments and layouts (if warranted)' },
+          {
+            body: 'Reach out to us to learn more about the program or the costs.',
+          },
         ],
       },
       {
@@ -88,7 +88,7 @@ const data = {
         items: [
           {
             head: 'Mechanicals',
-            body: 'Need to take things to print? Whether its a bottle label, a can sleeve, or a cardboard shipper we’ve got you covered. Just give us the dieline and the legal essentials and we’ll make the product pop (cost per packaging SKU)',
+            body: "Need to take things to print? Just give us the dieline and the legal essentials and we'll make the product pop (price per SKU).",
           },
           {
             head: 'Pitch deck (15-20 slides)',
@@ -99,8 +99,8 @@ const data = {
             body: 'Don’t have money for a photo shoot yet? No problem. We can source and pull imagery for you to use on web, social media, and more.',
           },
           {
-            head: '',
-            body: "Something you need that's not here? Reach out to us. (We also design compnay swag, homepages, social posts, and more)",
+            head: 'Others: company swag, Squarespace templates, social media posts, and more.',
+            body: '',
           },
         ],
       },
@@ -110,7 +110,7 @@ const data = {
     items: [
       {
         head: 'No hand holding.',
-        body: 'If you’re a someone that requires excessive attention, explaining, or has a hard time keep your eyes on the prize, you’re probably better off at an agency.',
+        body: 'Of course you can ask questions, but if you’re someone that requires lots of assistance and personal attention, you’re probably better off at an agency.',
       },
       {
         head: "Respect designers' time.",
@@ -129,10 +129,24 @@ const data = {
         body: 'We’re not aspiring designers trying to build a portfolio. We are professionals.  We don’t design things for free. If you’re interested in what we can do, buy a ticket and enjoy the show.',
       },
       {
-        head: 'Be kind and collaborative',
+        head: 'Be kind and collaborative.',
         body: 'It seems simple, but sometimes people forget their manners. Plus, you’d be amazed by how much better the work is when everyone is nice to each other.',
       },
     ],
+  },
+  section_5: {
+    image: {
+      src: '/images/lost_and_found.jpg',
+      alt: 'Lost and Found',
+      width: 1337,
+      height: 760,
+    },
+    caption: {
+      title: 'The Lost and Found',
+      subtitle: 'A new type of art gallery.',
+      description:
+        'The Lost and Found is dedicated to helping people discover the amazing art and artists among us. By shedding light on unknown talent, under-appreciated creators, and their untitled works this unique brand is opening up the world of fine art.',
+    },
   },
 };
 

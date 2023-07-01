@@ -5,7 +5,7 @@
 @layer base {
   html,
   body {
-    @apply bg-white text-black font-medium tracking-tighter relative;
+    @apply bg-white text-black font-normal tracking-tighter relative;
   }
 
   main {
@@ -40,5 +40,19 @@
 
   .constrain {
     @apply max-w-[64rem];
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-4 border-2 border-black shadow transition;
+  }
+
+  .btn-dark {
+    @apply btn bg-black text-white;
+  }
+
+  .btn-light {
+    @apply btn bg-white text-black;
   }
 }

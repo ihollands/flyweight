@@ -30,7 +30,7 @@ export default function AppRowGroup({ isVisible, rows }: Props) {
           }}
         >
           <h3 className="w-full lg:mb-0">✹ {head}</h3>
-          <p className="w-full text-base">{body}</p>
+          <p className="w-full pr-4 text-base">{body}</p>
         </div>
       ))}
     </div>

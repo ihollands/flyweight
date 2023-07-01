@@ -37,7 +37,7 @@ export default function AppSection({
       className={className}
       id={navItem.id}
     >
-      <h2 className={classNames('mb-8 w-full lg:mb-16', headerClass)}>
+      <h2 className={classNames('mb-8 w-full lg:mb-20', headerClass)}>
         {navItem.text.split(' ').map((word, idx) => (
           <span
             className={transitionClass(isVisible)}
