@@ -40,13 +40,13 @@ export default function AppNumGroup({ isVisible, items }: Props) {
           className="px-2 py-8 md:w-1/2 lg:w-1/3"
         >
           <div
-            className={classNames('mb-6', transitionClass(isVisible))}
+            className={classNames('mb-2 lg:mb-6', transitionClass(isVisible))}
             style={{
               transitionDelay: `${300 + transitionOrder[idx] * 100}ms`,
             }}
           >
-            <p className="mb-2 text-4xl font-medium">{displayNum(idx)}</p>
-            <p className="text-3xl">{head}</p>
+            <p className="mb-1 text-3xl font-medium lg:mb-2 lg:text-4xl">{displayNum(idx)}</p>
+            <p className="text-2xl lg:text-3xl">{head}</p>
           </div>
           <p
             className={classNames('text-base', transitionClass(isVisible))}

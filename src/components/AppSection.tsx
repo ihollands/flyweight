@@ -1,21 +1,9 @@
-import { ReactNode } from 'react';
 import classNames from 'classnames';
 import { transitionVisible } from '@/helpers/utils';
 
+import type { ISection } from '@/types/section';
+
 import useVisible from '@/hooks/visible';
-
-interface NavItem {
-  id: string;
-  text: string;
-}
-
-interface SectionProps {
-  headerClass?: string;
-  blurb?: string;
-  className?: string;
-  children?: (isVisible: boolean) => ReactNode;
-  navItem: NavItem;
-}
 
 const transitionClass = transitionVisible([
   'inline-block mr-3 transition-all duration-1000 ease-out transform-gpu',
@@ -23,35 +11,31 @@ const transitionClass = transitionVisible([
   'translate-y-0 opacity-100',
 ]);
 
-export default function AppSection({
-  blurb,
-  headerClass,
-  className,
-  children,
-  navItem,
-}: SectionProps) {
+export default function AppSection({ headerClass, wrapperClass, children, navItem }: ISection) {
   const { elRef, isVisible } = useVisible({ rootMargin: '-100px' });
   return (
     <div
       ref={elRef}
-      className={className}
-      id={navItem.id}
+      className={wrapperClass}
+      id={navItem?.id}
     >
       <h2 className={classNames('mb-8 w-full lg:mb-20', headerClass)}>
-        {navItem.text.split(' ').map((word, idx) => (
-          <span
-            className={transitionClass(isVisible)}
-            key={idx}
-            style={{
-              transitionDelay: `${idx * 100}ms`,
-            }}
-          >
-            {word}
-          </span>
+        {navItem?.text.map((wordGroup: string, idx0: number) => (
+          <div key={idx0}>
+            {wordGroup.split(' ').map((word: string, idx1: number) => (
+              <span
+                className={transitionClass(isVisible)}
+                key={idx1}
+                style={{
+                  transitionDelay: `${(idx0 + idx1) * 100}ms`,
+                }}
+              >
+                {word}
+              </span>
+            ))}
+          </div>
         ))}
       </h2>
-
-      {blurb && <p className="constrain mb-24">{blurb}</p>}
 
       {children && children(isVisible)}
     </div>

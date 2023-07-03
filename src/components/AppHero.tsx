@@ -3,6 +3,8 @@ import { ReactNode } from 'react';
 import classNames from 'classnames';
 import AppNav from '@/components/AppNav';
 
+import type { NavItem } from '@/types/navigation';
+
 interface Props {
   classes?: {
     outer?: string;
@@ -14,10 +16,10 @@ interface Props {
     alt: string;
   };
   children: ReactNode;
-  nav?: boolean;
+  navItems?: NavItem[];
 }
 
-export default function AppHero({ classes, image, children, nav = false }: Props) {
+export default function AppHero({ classes, image, children, navItems = [] }: Props) {
   const Title = ({ className, textClass }: { className?: string; textClass?: string }) => (
     <h1
       className={classNames(
@@ -49,7 +51,7 @@ export default function AppHero({ classes, image, children, nav = false }: Props
               />
             </div>
           )}
-          {nav ? (
+          {navItems?.length ? (
             <AppNav>
               {({ className, textClass }) => (
                 <Title
