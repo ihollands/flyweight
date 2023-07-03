@@ -11,7 +11,6 @@ const data = {
   ],
   sections: [
     {
-      wrapperClass: 'lg:flex',
       component: {
         name: 'AppPBlock',
         items: [

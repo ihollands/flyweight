@@ -23,7 +23,6 @@ const data = {
   ],
   sections: [
     {
-      wrapperClass: 'lg:flex',
       component: {
         name: 'AppPBlock',
         items: [
@@ -64,7 +63,6 @@ const data = {
       },
     },
     {
-      wrapperClass: 'constrain mx-auto border-2 border-black p-5 lg:p-16',
       component: {
         name: 'AppColGroup',
         cols: [

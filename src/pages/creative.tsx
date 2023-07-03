@@ -1,6 +1,8 @@
 import React, { JSXElementConstructor } from 'react';
 import type { ISection } from '@/types/section';
 
+import { wrapperClasses } from '@/helpers/classes';
+
 import pageData from '@/data/creative';
 
 import DefaultPage from '@/components/DefaultPage';
@@ -23,26 +25,30 @@ export default function Creative() {
         <title>Flyweight: For Creatives</title>
       </Head>
 
-      {pageData.sections.map(({ component, headerClass, wrapperClass }: ISection, idx: number) => (
-        <AppSection
-          key={idx}
-          navItem={pageData.nav_items[idx]}
-          headerClass={headerClass}
-          wrapperClass={wrapperClass}
-        >
-          {(isVisible: boolean) => {
-            const { name = '', ...props } = component || {};
-            const Component = components[name];
+      {pageData.sections.map(({ component, headerClass }: ISection, idx: number) => {
+        const wrapperClass = component?.name && wrapperClasses[component.name];
 
-            return (
-              <Component
-                {...props}
-                isVisible={isVisible}
-              />
-            );
-          }}
-        </AppSection>
-      ))}
+        return (
+          <AppSection
+            key={idx}
+            navItem={pageData.nav_items[idx]}
+            headerClass={headerClass}
+            wrapperClass={wrapperClass}
+          >
+            {(isVisible: boolean) => {
+              const { name = '', ...props } = component || {};
+              const Component = components[name];
+
+              return (
+                <Component
+                  {...props}
+                  isVisible={isVisible}
+                />
+              );
+            }}
+          </AppSection>
+        );
+      })}
     </DefaultPage>
   );
 }
