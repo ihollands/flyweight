@@ -36,3 +36,5 @@ export default function AppRowGroup({ isVisible, rows }: Props) {
     </div>
   );
 }
+
+export type { Props };

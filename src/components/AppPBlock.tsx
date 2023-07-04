@@ -30,3 +30,5 @@ export default function AppPBlock({ className, items, isVisible }: Props) {
     </div>
   );
 }
+
+export type { Props };

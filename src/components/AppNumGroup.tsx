@@ -61,3 +61,5 @@ export default function AppNumGroup({ isVisible, items }: Props) {
     </ul>
   );
 }
+
+export type { Props };

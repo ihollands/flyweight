@@ -1,54 +1,58 @@
-import React, { JSXElementConstructor } from 'react';
-import type { ISection } from '@/types/section';
-
-import { wrapperClasses } from '@/helpers/classes';
+import { Inter } from 'next/font/google';
+import Head from 'next/head';
 
 import pageData from '@/data/creative';
 
-import DefaultPage from '@/components/DefaultPage';
-import Head from 'next/head';
+import AppSectionHeader from '@/components/AppSectionHeader';
 import AppSection from '@/components/AppSection';
-import AppRowGroup from '@/components/AppRowGroup';
-import AppPBlock from '@/components/AppPBlock';
+import DefaultPage from '@/components/DefaultPage';
+import AppRowGroup, { type Props as AppRowGroupProps } from '@/components/AppRowGroup';
+import AppPBlock, { type Props as AppPBlockProps } from '@/components/AppPBlock';
 
-const components: {
-  [index: string]: JSXElementConstructor<any>;
-} = {
-  AppPBlock,
-  AppRowGroup,
-};
+const inter = Inter({ subsets: ['latin'] });
 
-export default function Creative() {
+const { sections = [] } = pageData;
+const navItems = sections.map(({ navItem }) => navItem);
+
+export default function Home() {
   return (
-    <DefaultPage navItems={pageData.nav_items}>
+    <DefaultPage navItems={navItems}>
       <Head>
-        <title>Flyweight: For Creatives</title>
+        <title>Flyweight: Brand Design</title>
       </Head>
 
-      {pageData.sections.map(({ component, headerClass }: ISection, idx: number) => {
-        const wrapperClass = component?.name && wrapperClasses[component.name];
+      <AppSection
+        navItem={sections[0].navItem}
+        className="xl:flex"
+      >
+        {(isVisible, navItem) => (
+          <>
+            <AppSectionHeader
+              navItem={navItem}
+              isVisible={isVisible}
+            />
+            <AppPBlock
+              isVisible={isVisible}
+              items={sections[0].items as AppPBlockProps['items']}
+            />
+          </>
+        )}
+      </AppSection>
 
-        return (
-          <AppSection
-            key={idx}
-            navItem={pageData.nav_items[idx]}
-            headerClass={headerClass}
-            wrapperClass={wrapperClass}
-          >
-            {(isVisible: boolean) => {
-              const { name = '', ...props } = component || {};
-              const Component = components[name];
-
-              return (
-                <Component
-                  {...props}
-                  isVisible={isVisible}
-                />
-              );
-            }}
-          </AppSection>
-        );
-      })}
+      <AppSection navItem={sections[1].navItem}>
+        {(isVisible, navItem) => (
+          <>
+            <AppSectionHeader
+              navItem={navItem}
+              isVisible={isVisible}
+            />
+            <AppRowGroup
+              isVisible={isVisible}
+              rows={sections[1].rows as AppRowGroupProps['rows']}
+            />
+          </>
+        )}
+      </AppSection>
     </DefaultPage>
   );
 }

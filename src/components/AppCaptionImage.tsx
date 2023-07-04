@@ -31,3 +31,5 @@ export default function AppCaptionImage({ image, caption }: Props) {
     </div>
   );
 }
+
+export type { Props };

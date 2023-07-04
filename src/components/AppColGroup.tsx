@@ -39,3 +39,5 @@ export default function AppColGroup({ isVisible, cols }: Props) {
     </div>
   );
 }
+
+export type { Props };
