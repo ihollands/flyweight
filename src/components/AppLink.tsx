@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowDownRightIcon } from '@heroicons/react/24/outline';
 
 interface Props {
-  children: string;
+  children: string | string[];
 
   [key: string]: any;
 }

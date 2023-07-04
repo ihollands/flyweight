@@ -1,16 +1,17 @@
 import { useState, ReactNode } from 'react';
 import classNames from 'classnames';
 
-import data from '@/data/index';
+import type { NavItem } from '@/types/navigation';
 
 import AppLink from '@/components/AppLink';
 
 interface Props {
   className?: string;
+  navItems: NavItem[];
   children: ({ className, textClass }: { [index: string]: string }) => ReactNode;
 }
 
-export default function AppNav({ className, children }: Props) {
+export default function AppNav({ className, children, navItems }: Props) {
   // TODO: Figure out mobile styling for menu
   const [isShrunk, setIsShrunk] = useState(false);
 
@@ -24,9 +25,9 @@ export default function AppNav({ className, children }: Props) {
         })}
         <nav className="pad-global w-full border border-pink-500">
           <ul className={classNames('flex flex-wrap text-lg', className)}>
-            {data.nav_items.map(({ id, text }) => (
+            {navItems.map(({ id, text }) => (
               <li key={id}>
-                <AppLink href={`#${id}`}>{text}</AppLink>
+                <AppLink href={`#${id}`}>{text.join(' ')}</AppLink>
               </li>
             ))}
           </ul>

@@ -52,14 +52,15 @@ export default function AppHero({ classes, image, children, navItems = [] }: Pro
             </div>
           )}
           {navItems?.length ? (
-            <AppNav>
-              {({ className, textClass }) => (
-                <Title
-                  className={className}
-                  textClass={textClass}
-                />
-              )}
-            </AppNav>
+            // <AppNav>
+            //   {({ className, textClass }) => (
+            //     <Title
+            //       className={className}
+            //       textClass={textClass}
+            //     />
+            //   )}
+            // </AppNav>
+            <div></div>
           ) : (
             <div className="pointer-events-none relative">
               <Title />

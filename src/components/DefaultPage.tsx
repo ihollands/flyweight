@@ -21,8 +21,12 @@ interface Props {
 
 export default function DefaultPage({ navItems, children }: Props) {
   const { route } = useRouter();
+  const isCreativeRoute = route.includes('creative');
 
-  const buttonLinkHref = route.includes('creative') ? '/' : '/creative';
+  const navButton = {
+    href: isCreativeRoute ? '/' : '/creative',
+    text: isCreativeRoute ? 'Flyweight Design' : `I'm a Creative`,
+  };
 
   return (
     <>
@@ -74,10 +78,10 @@ export default function DefaultPage({ navItems, children }: Props) {
       <div className="fixed -right-6 top-2 flex scale-75 gap-2 lg:right-2 lg:scale-100">
         <button className="btn-dark">I Need Design</button>
         <Link
-          href={buttonLinkHref}
+          href={navButton.href}
           className="btn-light"
         >
-          I&apos;m a Creative
+          <span>{navButton.text}</span>
         </Link>
       </div>
     </>
