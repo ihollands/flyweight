@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { transitionVisible } from '@/helpers/utils';
 
 interface Props {
@@ -14,7 +15,7 @@ const transitionClass = transitionVisible([
 
 export default function AppPBlock({ className, items, isVisible }: Props) {
   return (
-    <div className={className}>
+    <div className={classNames(className, 'w-full')}>
       {items.map((item: string, idx: number) => (
         <p
           key={idx}
@@ -29,3 +30,5 @@ export default function AppPBlock({ className, items, isVisible }: Props) {
     </div>
   );
 }
+
+export type { Props };

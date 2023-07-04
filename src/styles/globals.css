@@ -5,7 +5,7 @@
 @layer base {
   html,
   body {
-    @apply bg-white text-black font-medium tracking-tighter relative pb-10;
+    @apply bg-white text-black font-normal tracking-tighter relative;
   }
 
   main {
@@ -13,28 +13,52 @@
   }
 
   p {
-    @apply text-2xl mb-6 last:mb-0;
+    @apply text-base lg:text-2xl mb-6 last:mb-0;
   }
 
   h2 {
-    @apply text-4xl mb-4 last:mb-0;
+    @apply text-3xl lg:text-4xl mb-4 last:mb-0;
   }
 
   h3 {
-    @apply text-3xl mb-3 last:mb-0;
+    @apply text-2xl lg:text-3xl mb-3 last:mb-0;
+  }
+
+  .hero-title {
+    @apply text-[23.5vw] 3xl:text-[29rem];
   }
 }
 
 @layer utilities {
   .text-match-break {
-    @apply lg:text-lg xl:text-xl 2xl:text-2xl;
+    @apply lg:text-xl xl:text-2xl 2xl:text-3xl;
   }
 
   .pad-global {
-    @apply px-3 xl:px-12;
+    @apply px-5 lg:px-8 xl:px-12;
   }
 
   .constrain {
     @apply max-w-[64rem];
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-4 border-2 border-black shadow transition duration-500 relative hover:scale-95;
+    @apply before:inset-y-0 before:absolute before:left-0 before:transition-all before:w-0 before:duration-500 hover:before:w-full before:-z-10;
+    @apply after:inset-y-0 after:absolute after:right-0 after:transition-all after:w-full after:duration-500 hover:after:w-0 after:-z-10;
+  }
+
+  /*.btn > span {*/
+  /*  @apply relative z-10;*/
+  /*}*/
+
+  .btn-dark {
+    @apply btn text-white before:bg-white after:bg-black hover:text-black;
+  }
+
+  .btn-light {
+    @apply btn text-black before:bg-black after:bg-white hover:text-white;
   }
 }

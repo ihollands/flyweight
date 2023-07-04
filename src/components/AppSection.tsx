@@ -1,27 +1,15 @@
-import { ReactNode } from 'react';
-import { transitionVisible } from '@/helpers/utils';
-
 import useVisible from '@/hooks/visible';
+import { ReactNode } from 'react';
+import { NavItem } from '@/types/navigation';
 
-interface NavItem {
-  id: string;
-  text: string;
-}
-
-interface SectionProps {
-  blurb?: string;
+interface Props {
+  headerClass?: string;
   className?: string;
-  children?: (isVisible: boolean) => ReactNode;
   navItem: NavItem;
+  children?: (isVisible: boolean, navItem: NavItem) => ReactNode;
 }
 
-const transitionClass = transitionVisible([
-  'inline-block mr-3 transition-all duration-1000 ease-out transform-gpu',
-  'translate-y-3/4 opacity-0',
-  'translate-y-0 opacity-100',
-]);
-
-export default function AppSection({ blurb, className, children, navItem }: SectionProps) {
+export default function AppSection({ className, children, navItem }: Props) {
   const { elRef, isVisible } = useVisible({ rootMargin: '-100px' });
   return (
     <div
@@ -29,23 +17,7 @@ export default function AppSection({ blurb, className, children, navItem }: Sect
       className={className}
       id={navItem.id}
     >
-      <h2 className="mb-16 w-full">
-        {navItem.text.split(' ').map((word, idx) => (
-          <span
-            className={transitionClass(isVisible)}
-            key={idx}
-            style={{
-              transitionDelay: `${idx * 100}ms`,
-            }}
-          >
-            {word}
-          </span>
-        ))}
-      </h2>
-
-      {blurb && <p className="constrain mb-24">{blurb}</p>}
-
-      {children && children(isVisible)}
+      {children && children(isVisible, navItem)}
     </div>
   );
 }
