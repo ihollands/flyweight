@@ -57,7 +57,7 @@ export default function ContactForm() {
       },
     },
     {
-      el: 'email',
+      el: 'input',
       label: 'Email Address',
       props: {
         id: 'email',

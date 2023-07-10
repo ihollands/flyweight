@@ -59,7 +59,7 @@ export default function Home() {
 
       <AppSection
         navItem={sections[2].navItem}
-        className="constrain mx-auto border-2 border-black p-5 lg:p-16"
+        className="border-2 border-black p-5 lg:p-10"
       >
         {(isVisible, navItem) => (
           <>

@@ -45,7 +45,7 @@ export default function AppNumGroup({ isVisible, items }: Props) {
               transitionDelay: `${300 + transitionOrder[idx] * 100}ms`,
             }}
           >
-            <p className="mb-1 text-3xl font-medium lg:mb-2 lg:text-4xl">{displayNum(idx)}</p>
+            <p className="mb-1 text-4xl font-medium lg:mb-2">{displayNum(idx)}</p>
             <p className="text-2xl lg:text-3xl">{head}</p>
           </div>
           <p
