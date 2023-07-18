@@ -6,8 +6,6 @@ import type { NavItem } from '@/types/navigation';
 
 import defaultData from '@/data/default';
 
-import { useRouter } from 'next/router';
-
 import AppHero from '@/components/AppHero';
 import AppLink from '@/components/AppLink';
 import AppSection from '@/components/AppSection';
@@ -23,8 +21,6 @@ interface Props {
 }
 
 export default function DefaultPage({ navItems, children }: Props) {
-  const { route } = useRouter();
-
   const [showContactModal, setShowContactModal] = useState(false);
 
   return (
@@ -99,11 +95,13 @@ export default function DefaultPage({ navItems, children }: Props) {
           I&apos;m a creative
         </Link>
       </div>
-      {showContactModal && (
-        <AppModal id="contact-form">
-          <ContactForm />
-        </AppModal>
-      )}
+      <AppModal
+        show={showContactModal}
+        id="contact-form"
+        setShow={setShowContactModal}
+      >
+        <ContactForm />
+      </AppModal>
     </>
   );
 }

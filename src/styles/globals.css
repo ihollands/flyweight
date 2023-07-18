@@ -55,4 +55,8 @@
   .btn-light {
     @apply btn text-black bg-white;
   }
+
+  .form-input {
+    @apply flex flex-col;
+  }
 }

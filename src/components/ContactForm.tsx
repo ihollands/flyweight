@@ -79,13 +79,17 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="border border-black/30 p-4"
+      className="space-y-4"
+      style={{ width: 'calc(100v - 8rem)' }}
     >
       {formFields.map(({ el, label, props }) => {
         const inputEl = React.createElement(el, { ...props });
 
         return (
-          <div key={props.id}>
+          <div
+            key={props.id}
+            className="form-input"
+          >
             <label htmlFor={props.id}>{label}</label>
             {inputEl}
             <ValidationError
