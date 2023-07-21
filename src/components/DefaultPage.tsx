@@ -1,6 +1,7 @@
-import { useState, type ReactNode } from 'react';
+import { useState, useRef, useEffect, type ReactNode } from 'react';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
+import { Transition } from '@headlessui/react';
 
 import type { NavItem } from '@/types/navigation';
 
@@ -21,10 +22,25 @@ interface Props {
 }
 
 export default function DefaultPage({ navItems, children }: Props) {
+  const [isMounted, setIsMounted] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
-    <>
+    <Transition
+      appear={true}
+      show={isMounted}
+      className="relative"
+      enter="transition-opacity duration-[2s]"
+      enterFrom="opacity-0"
+      enterTo="opacity-100"
+      leave="transition-opacity duration-[2s]"
+      leaveFrom="opacity-100"
+      leaveTo="opacity-0"
+    >
       <div className="relative space-y-20 lg:space-y-32 xl:space-y-40">
         <AppHero
           classes={{
@@ -53,6 +69,7 @@ export default function DefaultPage({ navItems, children }: Props) {
           {(isVisible, navItem) => (
             <>
               <AppSectionHeader
+                className="pad-global"
                 navItem={navItem}
                 isVisible={isVisible}
               />
@@ -68,10 +85,8 @@ export default function DefaultPage({ navItems, children }: Props) {
                 aspectRatio="100%"
               >
                 <span className="relative flex flex-col items-start">
-                  <AppLink href="mailto:peter@flyweight.xyz">Email</AppLink>
-                  <AppLink href="https://www.instagram.com/explore/tags/flyweight/">
-                    Instagram
-                  </AppLink>
+                  <AppLink href="mailto:hello@flyweight.xyz">Email</AppLink>
+                  <AppLink href="https://www.instagram.com/flyweightdesign/">Instagram</AppLink>
                   <AppLink href="https://www.linkedin.com">LinkedIn</AppLink>
                 </span>
               </AppHero>
@@ -89,7 +104,7 @@ export default function DefaultPage({ navItems, children }: Props) {
           I Need Design
         </button>
         <Link
-          href="/creative"
+          href="/creative#designers"
           className="btn-light"
         >
           I&apos;m a creative
@@ -102,6 +117,6 @@ export default function DefaultPage({ navItems, children }: Props) {
       >
         <ContactForm />
       </AppModal>
-    </>
+    </Transition>
   );
 }

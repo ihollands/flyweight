@@ -47,7 +47,7 @@ export default function AppHero({ classes, image, children, aspectRatio, navItem
     <div className={classNames('relative', classes?.outer)}>
       <div className={classNames('pad-global', classes?.inner)}>
         <p
-          className="text-match-break relative z-10 leading-3"
+          className="text-match-break relative top-[18vw] z-10 leading-3 sm:top-10 md:top-8 lg:top-0"
           style={{ lineHeight: 1.02 }}
         >
           {children}

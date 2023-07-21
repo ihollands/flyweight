@@ -3,6 +3,8 @@ import Head from 'next/head';
 
 import pageData from '@/data/index';
 
+import { Transition } from '@headlessui/react';
+
 import AppSectionHeader from '@/components/AppSectionHeader';
 import AppSection from '@/components/AppSection';
 import DefaultPage from '@/components/DefaultPage';
