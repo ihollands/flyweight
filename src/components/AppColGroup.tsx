@@ -20,7 +20,7 @@ export default function AppColGroup({ isVisible, cols }: Props) {
       {cols.map(({ title, intro, items }, idx) => (
         <div
           key={idx}
-          className="lg:w-1/2"
+          className="lg:w-1/2 lg:odd:pr-10 lg:even:-ml-11"
         >
           <h3 className="mb-6">{title}</h3>
           {intro && <p className="text-base">{intro}</p>}

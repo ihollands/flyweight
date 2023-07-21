@@ -7,7 +7,12 @@ export default function ContactForm() {
   const [state, handleSubmit] = useForm(data.contact_form.id);
 
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
+    return (
+      <>
+        <h1 className="text-2xl">Thanks for reaching out.</h1>
+        <p className="text-base">Check your email. Our managing director will reach out shortly.</p>
+      </>
+    );
   }
 
   const formFields = [
@@ -57,7 +62,7 @@ export default function ContactForm() {
       },
     },
     {
-      el: 'email',
+      el: 'input',
       label: 'Email Address',
       props: {
         id: 'email',
@@ -79,14 +84,18 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="border border-black/30 p-4"
+      className="space-y-4"
+      style={{ width: 'calc(100v - 8rem)' }}
     >
       {formFields.map(({ el, label, props }) => {
         const inputEl = React.createElement(el, { ...props });
 
         return (
-          <div key={props.id}>
-            <label htmlFor={props.id}>{label}</label>
+          <div
+            key={props.id}
+            className="form-field"
+          >
+            <label htmlFor={props.id}>{label}:</label>
             {inputEl}
             <ValidationError
               prefix={label}
@@ -96,12 +105,15 @@ export default function ContactForm() {
           </div>
         );
       })}
-      <button
-        type="submit"
-        disabled={state.submitting}
-      >
-        Submit
-      </button>
+      <div className="pt-4">
+        <button
+          className="btn-light"
+          type="submit"
+          disabled={state.submitting}
+        >
+          Submit
+        </button>
+      </div>
     </form>
   );
 }

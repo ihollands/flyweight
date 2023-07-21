@@ -22,10 +22,15 @@ interface Props {
 export default function AppCaptionImage({ image, caption }: Props) {
   return (
     <div>
-      <Image {...image} />
+      <Image
+        {...image}
+        quality={80}
+      />
       <div className="mt-6 grid-cols-8 gap-2 lg:grid">
-        <h3 className="lg:col-span-2">{caption.title}</h3>
-        <p className="mb-4 text-base lg:col-span-2 xl:col-span-2">{caption.subtitle}</p>
+        <h3 className="lg:col-span-3 xl:col-span-2">{caption.title}</h3>
+        <p className="relative mb-4 text-center text-base lg:top-3 lg:col-span-4 lg:text-center xl:col-span-2">
+          {caption.subtitle}
+        </p>
         <p className="pr-4 text-base lg:col-span-8 xl:col-span-4">{caption.description}</p>
       </div>
     </div>

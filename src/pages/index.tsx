@@ -3,6 +3,8 @@ import Head from 'next/head';
 
 import pageData from '@/data/index';
 
+import { Transition } from '@headlessui/react';
+
 import AppSectionHeader from '@/components/AppSectionHeader';
 import AppSection from '@/components/AppSection';
 import DefaultPage from '@/components/DefaultPage';
@@ -59,7 +61,7 @@ export default function Home() {
 
       <AppSection
         navItem={sections[2].navItem}
-        className="constrain mx-auto border-2 border-black p-5 lg:p-16"
+        className="border-2 border-black p-5 lg:p-10"
       >
         {(isVisible, navItem) => (
           <>

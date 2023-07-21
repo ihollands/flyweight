@@ -27,11 +27,25 @@
   .hero-title {
     @apply text-[23.5vw] 3xl:text-[29rem];
   }
+
+  input,
+  textarea,
+  select {
+    @apply text-black p-2 outline-none;
+  }
+
+  textarea {
+    @apply h-32 resize-none;
+  }
+
+  label {
+    @apply font-semibold;
+  }
 }
 
 @layer utilities {
   .text-match-break {
-    @apply lg:text-xl xl:text-2xl 2xl:text-3xl;
+    @apply lg:text-xl xl:text-3xl;
   }
 
   .pad-global {
@@ -45,20 +59,18 @@
 
 @layer components {
   .btn {
-    @apply px-6 py-4 border-2 border-black shadow transition duration-500 relative hover:scale-95;
-    @apply before:inset-y-0 before:absolute before:left-0 before:transition-all before:w-0 before:duration-500 hover:before:w-full before:-z-10;
-    @apply after:inset-y-0 after:absolute after:right-0 after:transition-all after:w-full after:duration-500 hover:after:w-0 after:-z-10;
+    @apply px-3 py-2 text-sm lg:text-base lg:px-6 lg:py-4 border-2 border-black shadow transition transform-gpu duration-500 relative hover:scale-95;
   }
 
-  /*.btn > span {*/
-  /*  @apply relative z-10;*/
-  /*}*/
-
   .btn-dark {
-    @apply btn text-white before:bg-white after:bg-black hover:text-black;
+    @apply btn text-white bg-black;
   }
 
   .btn-light {
-    @apply btn text-black before:bg-black after:bg-white hover:text-white;
+    @apply btn text-black bg-white;
+  }
+
+  .form-field {
+    @apply flex flex-col gap-2;
   }
 }
