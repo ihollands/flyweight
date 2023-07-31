@@ -1,25 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactNode } from 'react';
 import classNames from 'classnames';
-import AppNav from '@/components/AppNav';
 
 import type { NavItem } from '@/types/navigation';
 import useActiveLink from '@/hooks/activeLink';
 
+import AppLogo from '@/components/AppLogo';
+
 interface Props {
-  classes?: {
-    outer?: string;
-    inner?: string;
-    image?: string;
-  };
-  image?: {
-    [key: string]: any;
-    src: string;
-    alt: string;
-  };
-  aspectRatio: string;
-  children: ReactNode;
+  blurb: string;
   navItems?: NavItem[];
 }
 
@@ -28,50 +17,47 @@ const Title = ({ className, textClass }: { className?: string; textClass?: strin
 
   return (
     <Link href="/">
-      <h1
+      <div
         className={classNames(
-          'pointer-events-none -ml-[1.5vw] mb-14 origin-top-left font-medium leading-none tracking-tight transition-all duration-500 hover:text-accent-blue',
+          'mb-14 origin-top-left',
           className,
           textClass ? textClass : 'hero-title',
-          isActive.current ? 'pointer-events-none' : 'pointer-events-auto'
+          isActive.current
+            ? 'pointer-events-none'
+            : 'pointer-events-auto fill-black transition-all duration-500 hover:fill-accent-blue'
         )}
       >
-        Flyweight
-      </h1>
+        <AppLogo />
+      </div>
     </Link>
   );
 };
 
-export default function AppHero({ classes, image, children, aspectRatio, navItems = [] }: Props) {
+export default function AppHero({ blurb, navItems = [] }: Props) {
   return (
-    <div className={classNames('relative', classes?.outer)}>
-      <div className={classNames('pad-global', classes?.inner)}>
+    <div className="relative xl:min-h-[80vh]">
+      <div className="pad-global mt-40 md:mt-72 xl:mt-[20vw]">
         <p
-          className="text-match-break relative top-[18vw] z-10 leading-3 sm:top-10 md:top-8 lg:top-0"
+          className="text-match-break relative -top-32 z-10 w-3/4 sm:top-10 sm:w-80 md:top-8 md:w-96 lg:top-0 xl:w-[41.5rem]"
           style={{ lineHeight: 1.02 }}
-        >
-          {children}
-        </p>
+          dangerouslySetInnerHTML={{ __html: blurb }}
+        />
 
         <div className="z-initial relative">
-          {image && (
+          <div className="absolute right-0 top-0 w-1/3 -translate-y-[60%] lg:right-[148px]">
             <div
-              className={classNames(
-                'absolute right-0 top-0 -translate-y-[60%] lg:right-[145px]',
-                classes?.image
-              )}
+              style={{ paddingBottom: '114.4%' }}
+              className="shadow-lg"
             >
-              <div
-                style={{ paddingBottom: aspectRatio }}
-                className="shadow-lg"
-              >
-                <Image
-                  {...image}
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
+              <Image
+                src={'/images/boxer_1.jpg'}
+                alt={'Boxer'}
+                fill={true}
+                quality={20}
+                style={{ objectFit: 'cover' }}
+              />
             </div>
-          )}
+          </div>
           {navItems?.length ? (
             // <AppNav>
             //   {({ className, textClass }) => (

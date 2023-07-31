@@ -4,7 +4,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import data from '@/data/default';
 
 export default function ContactForm() {
-  const [state, handleSubmit] = useForm(data.contact_form.id);
+  const [state, handleSubmit] = useForm(data.contact.form.id);
 
   if (state.succeeded) {
     return (
@@ -72,7 +72,7 @@ export default function ContactForm() {
     },
     {
       el: 'textarea',
-      label: 'How did you hear about us?',
+      label: 'Message',
       props: {
         id: 'message',
         type: 'text',

@@ -11,7 +11,7 @@ interface Props {
 }
 
 const transitionClass = transitionVisible([
-  'lg:flex justify-between border-t border-black py-6 transition-all duration-1000 ease-out',
+  'lg:flex justify-between border-t border-black py-6 transition-all duration-1000 ease-out last:border-y',
   'opacity-0 translate-y-1/4',
   'opacity-100 translate-y-0',
 ]);
@@ -20,7 +20,7 @@ export default function AppRowGroup({ isVisible, rows }: Props) {
   const itemIdxRange = [...Array.from({ length: rows.length }, (x, i) => i)];
 
   return (
-    <div className="border-b border-black">
+    <div>
       {rows.map(({ head, body }, idx) => (
         <div
           key={idx}

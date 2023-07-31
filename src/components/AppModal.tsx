@@ -30,7 +30,7 @@ export default function AppModal({ children, id, node, show = false, setShow }: 
       {createPortal(
         <Transition show={show}>
           <Transition.Child
-            className="fixed bottom-0 left-0 top-0 z-10 w-full bg-white/80"
+            className="fixed bottom-0 left-0 top-0 z-10 w-full bg-white/90"
             enter="transition-all duration-500"
             enterFrom="w-0"
             enterTo="w-full right-0"
@@ -40,7 +40,7 @@ export default function AppModal({ children, id, node, show = false, setShow }: 
             onClick={() => setShow(false)}
           />
           <Transition.Child
-            className=" fixed left-1/2 top-1/2 z-20 max-w-screen-xs -translate-x-1/2 -translate-y-1/2 overflow-auto bg-black p-10 text-white shadow-xl"
+            className=" fixed left-1/2 top-1/2 z-20 max-w-screen-xs -translate-x-1/2 -translate-y-1/2 overflow-auto border-2 border-black bg-white p-10 shadow-xl"
             enter="transition-all duration-500"
             enterFrom="opacity-0"
             enterTo="opacity-100"

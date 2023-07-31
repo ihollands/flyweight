@@ -15,7 +15,7 @@ const transitionClass = transitionVisible([
 
 export default function AppPBlock({ className, items, isVisible }: Props) {
   return (
-    <div className={classNames(className, 'w-full')}>
+    <div className={classNames(className, 'w-full text-3xl')}>
       {items.map((item: string, idx: number) => (
         <p
           key={idx}
@@ -23,9 +23,8 @@ export default function AppPBlock({ className, items, isVisible }: Props) {
           style={{
             transitionDelay: `${idx * 100}ms`,
           }}
-        >
-          {item}
-        </p>
+          dangerouslySetInnerHTML={{ __html: item }}
+        />
       ))}
     </div>
   );

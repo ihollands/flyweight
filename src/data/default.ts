@@ -1,8 +1,20 @@
 const data = {
-  contact_form: {
-    id: 'moqoabng',
+  contact: {
+    form: {
+      id: 'moqoabng',
+    },
+    links: [
+      {
+        href: 'mailto:hello@flyweight.xyz',
+        text: 'Email',
+      },
+      {
+        href: 'https://www.instagram.com/flyweightdesign/',
+        text: 'Instagram',
+      },
+    ],
   },
-  header_hero: {
+  hero: {
     blurb: `Leaner and meaner brand design.<br />Heavy hitting creative power meets<br/>a nimble project approach.`,
   },
 };
