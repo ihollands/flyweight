@@ -3,7 +3,7 @@ const data = {
     {
       navItem: {
         id: 'designers',
-        text: ['By Designers,', 'for Designers'],
+        text: ['For Designers'],
       },
       items: [
         'We’re a group of prizefighting designers looking to advance our collective ambitions and are always in search of others to join our team. In the interest of transparency, we want to be clear that while Flyweight does take a fee, designers take home the majority of the profits (a five-figure sum for each project). The money the organization makes goes toward business / resource management, so all we have to do is focus on design.',

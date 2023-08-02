@@ -23,15 +23,19 @@ export default function AppCaptionImage({ image, caption }: Props) {
   return (
     <div>
       <Image
-        {...image}
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        className="w-full"
         quality={80}
       />
-      <div className="mt-6 grid-cols-8 gap-2 lg:grid">
-        <h3 className="lg:col-span-3 xl:col-span-2">{caption.title}</h3>
-        <p className="relative mb-4 text-center text-base lg:top-3 lg:col-span-4 lg:text-center xl:col-span-2">
-          {caption.subtitle}
-        </p>
-        <p className="pr-4 text-base lg:col-span-8 xl:col-span-4">{caption.description}</p>
+      <div className="mt-6">
+        <h3 className="mb-0">{caption.title}</h3>
+        <div className="lg:flex">
+          <p className="lg:w-1/3">{caption.subtitle}</p>
+          <p className="lg:w-2/3">{caption.description}</p>
+        </div>
       </div>
     </div>
   );

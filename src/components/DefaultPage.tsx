@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, type ReactNode } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import { Transition } from '@headlessui/react';
@@ -8,11 +8,11 @@ import type { NavItem } from '@/types/navigation';
 import defaultData from '@/data/default';
 
 import AppHero from '@/components/AppHero';
-import AppLink from '@/components/AppLink';
 import AppSection from '@/components/AppSection';
 import AppSectionHeader from '@/components/AppSectionHeader';
 import AppModal from '@/components/AppModal';
 import ContactForm from '@/components/ContactForm';
+import ContactSection from '@/components/ContactSection';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,7 +26,9 @@ export default function DefaultPage({ navItems, children }: Props) {
   const [showContactModal, setShowContactModal] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
+    setTimeout(() => {
+      setIsMounted(true);
+    }, 1000);
   }, []);
 
   return (
@@ -34,32 +36,12 @@ export default function DefaultPage({ navItems, children }: Props) {
       appear={true}
       show={isMounted}
       className="relative"
-      enter="transition-opacity duration-[2s]"
+      enter="transition-opacity duration-1000"
       enterFrom="opacity-0"
       enterTo="opacity-100"
-      leave="transition-opacity duration-[2s]"
-      leaveFrom="opacity-100"
-      leaveTo="opacity-0"
     >
       <div className="relative space-y-20 lg:space-y-32 xl:space-y-40">
-        <AppHero
-          classes={{
-            outer: 'xl:min-h-[80vh]',
-            inner: 'mt-40 md:mt-72 xl:mt-[20vw]',
-            image: 'w-1/3',
-          }}
-          image={{
-            src: '/images/boxer_1.jpg',
-            alt: 'Boxer',
-            fill: true,
-          }}
-          aspectRatio="114.4%"
-        >
-          <span
-            dangerouslySetInnerHTML={{ __html: defaultData.header_hero.blurb }}
-            className="relative -top-32 w-3/4 sm:w-80 md:w-96 xl:w-[41.5rem]"
-          />
-        </AppHero>
+        <AppHero blurb={defaultData.hero.blurb} />
 
         <main>
           <div className="pad-global space-y-28 xl:space-y-40">{children}</div>
@@ -73,29 +55,20 @@ export default function DefaultPage({ navItems, children }: Props) {
                 navItem={navItem}
                 isVisible={isVisible}
               />
-              <AppHero
-                classes={{
-                  image: 'w-1/3 md:w-1/4 lg:w-1/5',
-                }}
-                image={{
-                  src: '/images/phone_1.jpg',
-                  alt: 'Phone',
-                  fill: true,
-                }}
-                aspectRatio="100%"
-              >
-                <span className="relative flex flex-col items-start">
-                  <AppLink href="mailto:hello@flyweight.xyz">Email</AppLink>
-                  <AppLink href="https://www.instagram.com/flyweightdesign/">Instagram</AppLink>
-                  <AppLink href="https://www.linkedin.com">LinkedIn</AppLink>
-                </span>
-              </AppHero>
+
+              <ContactSection links={defaultData.contact.links} />
             </>
           )}
         </AppSection>
       </div>
 
-      <div className="pad-global fixed right-0 top-2 flex gap-2">
+      <Transition.Child
+        className="fixed right-2 top-2 z-10 flex gap-2"
+        enter="transition-opacity delay-1000 duration-1000"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        entered="opacity-100"
+      >
         <button
           type="button"
           className="btn-dark"
@@ -107,9 +80,10 @@ export default function DefaultPage({ navItems, children }: Props) {
           href="/creative#designers"
           className="btn-light"
         >
-          I&apos;m a creative
+          I&apos;m a Creative
         </Link>
-      </div>
+      </Transition.Child>
+
       <AppModal
         show={showContactModal}
         id="contact-form"

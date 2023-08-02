@@ -2,4 +2,9 @@ interface Data {
   [index: string]: any;
 }
 
-export type { Data };
+interface ExtLink extends Data {
+  href: string;
+  text: string;
+}
+
+export type { Data, ExtLink };

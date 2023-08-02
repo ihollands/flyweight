@@ -6,8 +6,9 @@ const data = {
         text: ['Our Philosophy'],
       },
       items: [
-        'All it takes is one great designer.',
-        'We’ve eliminated the office and the agency overhead, connecting clients directly with the best design talent. This streamlined approach gives us three unfair advantages. 1) We’re not constrained by hiring geography. This opens up the talent pool, so we can be more discerning about who we invite to join our platform. 2) We are able to maintain the highest creative standards, while keeping costs to a minimum. The result is clients get more bang for their buck 3) With fewer mouths to feed, we as designers earn more per project than just about anywhere else.',
+        '<h3>All it takes is one great designer.</h3>',
+        'We’ve eliminated the office and the agency overhead, connecting clients directly with the best design talent. This streamlined approach gives us three unfair advantages.',
+        '1) We’re not constrained by hiring geography. This opens up the talent pool, so we can be more discerning about who we invite to join our platform.</br>2) We are able to maintain the highest creative standards, while keeping costs to a minimum. The result is clients get more bang for their buck</br>3) With fewer mouths to feed, we as designers earn more per project than just about anywhere else.',
       ],
     },
     {
@@ -18,7 +19,7 @@ const data = {
       rows: [
         {
           head: 'Selective Admissions',
-          body: 'This is not an open platform. Designers must apply and go through a multi-step vetting process to prove their abilities. This is a carefully curated roster of creatives.',
+          body: 'This is a carefully curated roster of award-winning designers. They are agency trained and tested and must go through a multi-step vetting process to join the platform.',
         },
         {
           head: 'One-on-One Relationships',
@@ -135,7 +136,7 @@ const data = {
       },
       caption: {
         title: 'The Lost and Found',
-        subtitle: 'A new type of art gallery.',
+        subtitle: 'A New Type of Art Gallery',
         description:
           'The Lost and Found is dedicated to helping people discover the amazing art and artists among us. By shedding light on unknown talent, under-appreciated creators, and their untitled works this unique brand is opening up the world of fine art.',
       },

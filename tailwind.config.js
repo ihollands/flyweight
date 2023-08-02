@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/data/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
     './src/app/**/*.{js,ts,jsx,tsx}',
   ],
@@ -16,7 +17,7 @@ module.exports = {
         },
       },
       fontSize: {
-        '3xl': ['2rem', 1.0625],
+        '2xl': ['2rem', 1.0625],
         '4xl': ['4rem', 1],
       },
       screens: {

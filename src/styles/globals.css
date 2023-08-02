@@ -8,12 +8,8 @@
     @apply bg-white text-black font-normal tracking-tighter relative;
   }
 
-  main {
-    @apply max-w-[1440px] mx-auto;
-  }
-
   p {
-    @apply text-base lg:text-2xl mb-6 last:mb-0;
+    @apply text-base mb-6 last:mb-0;
   }
 
   h2 {
@@ -22,10 +18,6 @@
 
   h3 {
     @apply text-2xl lg:text-3xl mb-3 last:mb-0;
-  }
-
-  .hero-title {
-    @apply text-[23.5vw] 3xl:text-[29rem];
   }
 
   input,
@@ -49,7 +41,7 @@
   }
 
   .pad-global {
-    @apply px-5 lg:px-8 xl:px-12;
+    @apply px-2;
   }
 
   .constrain {
