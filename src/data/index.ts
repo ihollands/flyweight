@@ -6,7 +6,7 @@ const data = {
         text: ['Our Philosophy'],
       },
       items: [
-        '<p class="text:xl xl:text-3xl">All it takes is one great designer.</p>',
+        '<h3>All it takes is one great designer.</h3>',
         'We’ve eliminated the office and the agency overhead, connecting clients directly with the best design talent. This streamlined approach gives us three unfair advantages.',
         '1) We’re not constrained by hiring geography. This opens up the talent pool, so we can be more discerning about who we invite to join our platform.</br>2) We are able to maintain the highest creative standards, while keeping costs to a minimum. The result is clients get more bang for their buck</br>3) With fewer mouths to feed, we as designers earn more per project than just about anywhere else.',
       ],

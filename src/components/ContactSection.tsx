@@ -22,7 +22,6 @@ export default function ContactSection({ links }: Props) {
           <span className="relative flex flex-col items-start leading-none">
             {links.map(({ href, text }, idx: number) => (
               <AppLink
-                style={{ paddingLeft: `${idx}rem` }}
                 href={href}
                 key={idx}
               >

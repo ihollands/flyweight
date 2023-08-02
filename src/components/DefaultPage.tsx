@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect, type ReactNode } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
+import classNames from 'classnames';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import { Transition } from '@headlessui/react';
@@ -26,7 +27,9 @@ export default function DefaultPage({ navItems, children }: Props) {
   const [showContactModal, setShowContactModal] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
+    setTimeout(() => {
+      setIsMounted(true);
+    }, 1000);
   }, []);
 
   return (
@@ -34,7 +37,7 @@ export default function DefaultPage({ navItems, children }: Props) {
       appear={true}
       show={isMounted}
       className="relative"
-      enter="transition-opacity duration-[2s]"
+      enter="transition-opacity duration-1000"
       enterFrom="opacity-0"
       enterTo="opacity-100"
     >
@@ -60,7 +63,13 @@ export default function DefaultPage({ navItems, children }: Props) {
         </AppSection>
       </div>
 
-      <div className="pad-global fixed right-0 top-2 z-10 flex gap-2">
+      <Transition.Child
+        className="fixed right-2 top-2 z-10 flex gap-2"
+        enter="transition-opacity delay-1000 duration-1000"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        entered="opacity-100"
+      >
         <button
           type="button"
           className="btn-dark"
@@ -74,7 +83,7 @@ export default function DefaultPage({ navItems, children }: Props) {
         >
           I&apos;m a Creative
         </Link>
-      </div>
+      </Transition.Child>
 
       <AppModal
         show={showContactModal}

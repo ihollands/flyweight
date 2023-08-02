@@ -1,4 +1,4 @@
-import useVisible from '@/hooks/visible';
+import useIntersection from '@/hooks/intersection';
 import { ReactNode } from 'react';
 import { NavItem } from '@/types/navigation';
 
@@ -10,7 +10,15 @@ interface Props {
 }
 
 export default function AppSection({ className, children, navItem }: Props) {
-  const { elRef, isVisible } = useVisible({ rootMargin: '-100px' });
+  const { elRef, isVisible } = useIntersection(
+    { rootMargin: '-100px' },
+    (entry, obs, setIsVisible) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+      }
+    }
+  );
+
   return (
     <div
       ref={elRef}

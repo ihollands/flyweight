@@ -17,7 +17,7 @@ module.exports = {
         },
       },
       fontSize: {
-        '3xl': ['2rem', 1.0625],
+        '2xl': ['2rem', 1.0625],
         '4xl': ['4rem', 1],
       },
       screens: {

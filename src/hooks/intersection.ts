@@ -6,15 +6,19 @@ interface Options {
   threshold?: number;
 }
 
-const useVisible = (options: Options = {}) => {
+type Handler = (
+  entry: IntersectionObserverEntry,
+  obs: IntersectionObserver,
+  fn: (val: boolean) => void
+) => void;
+
+const useIntersection = (options: Options = {}, handler: Handler) => {
   const elRef = useRef<any>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry], obs) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-      }
+      handler(entry, obs, setIsVisible);
     }, options);
 
     observer.observe(elRef.current);
@@ -28,4 +32,4 @@ const useVisible = (options: Options = {}) => {
   };
 };
 
-export default useVisible;
+export default useIntersection;

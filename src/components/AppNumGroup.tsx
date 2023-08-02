@@ -33,7 +33,7 @@ export default function AppNumGroup({ isVisible, items }: Props) {
   };
 
   return (
-    <ul className="grid grid-flow-row grid-flow-row gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8 xl:gap-12">
+    <ul className="grid grid-flow-row grid-flow-row gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8 xl:gap-20">
       {items.map(({ head, body }, idx) => (
         <li key={idx}>
           <div
@@ -46,7 +46,7 @@ export default function AppNumGroup({ isVisible, items }: Props) {
             <p className="text-2xl lg:text-3xl">{head}</p>
           </div>
           <p
-            className={classNames('text-base', transitionClass(isVisible))}
+            className={classNames('max-w-sm text-base', transitionClass(isVisible))}
             style={{
               transitionDelay: `${600 + transitionOrder[idx] * 100}ms`,
             }}

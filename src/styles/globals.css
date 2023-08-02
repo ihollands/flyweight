@@ -9,7 +9,7 @@
   }
 
   p {
-    @apply text-base lg:text-2xl mb-6 last:mb-0;
+    @apply text-base mb-6 last:mb-0;
   }
 
   h2 {
