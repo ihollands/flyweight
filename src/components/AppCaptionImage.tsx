@@ -23,7 +23,10 @@ export default function AppCaptionImage({ image, caption }: Props) {
   return (
     <div>
       <Image
-        {...image}
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
         className="w-full"
         quality={80}
       />

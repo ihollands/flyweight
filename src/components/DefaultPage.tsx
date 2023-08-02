@@ -1,5 +1,4 @@
 import { useState, useEffect, type ReactNode } from 'react';
-import classNames from 'classnames';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import { Transition } from '@headlessui/react';

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import classNames from 'classnames';
@@ -7,8 +6,6 @@ import type { NavItem } from '@/types/navigation';
 
 import useActiveLink from '@/hooks/activeLink';
 import useIntersection from '@/hooks/intersection';
-
-import { Transition } from '@headlessui/react';
 
 import AppLogo from '@/components/AppLogo';
 
@@ -67,8 +64,9 @@ export default function AppHero({ blurb }: Props) {
             >
               <Image
                 src={'/images/boxer_1.jpg'}
-                alt={'Boxer'}
-                fill={true}
+                alt="Boxer"
+                fill
+                sizes="33vw"
                 quality={20}
                 style={{ objectFit: 'cover' }}
               />

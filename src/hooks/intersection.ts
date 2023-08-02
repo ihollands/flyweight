@@ -24,7 +24,7 @@ const useIntersection = (options: Options = {}, handler: Handler) => {
     observer.observe(elRef.current);
 
     return () => observer.disconnect();
-  }, [elRef, options]);
+  }, [elRef, options, handler]);
 
   return {
     elRef,
