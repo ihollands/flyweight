@@ -41,7 +41,7 @@
   }
 
   .pad-global {
-    @apply px-2;
+    @apply px-2 2xl:px-4;
   }
 
   .constrain {

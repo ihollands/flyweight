@@ -37,7 +37,7 @@ export default function AppHero({ blurb }: Props) {
   });
 
   const transitionClasses = {
-    small: 'fixed left-2 top-2 w-20 xl:w-32',
+    small: 'fixed left-2 2xl:left-4 top-2 w-20 xl:w-32',
     large: 'absolute w-full',
   };
 

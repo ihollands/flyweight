@@ -44,7 +44,7 @@ export default function DefaultPage({ navItems, children }: Props) {
         <AppHero blurb={defaultData.hero.blurb} />
 
         <main>
-          <div className="pad-global space-y-28 xl:space-y-40">{children}</div>
+          <div className="pad-global mb-28 space-y-28 xl:mb-40 xl:space-y-40">{children}</div>
         </main>
 
         <AppSection navItem={{ id: 'contact_us', text: ['Contact Us'] }}>

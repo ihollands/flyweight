@@ -1,4 +1,8 @@
+import { useState } from 'react';
 import Image from 'next/image';
+
+import AppLink from '@/components/AppLink';
+import AppModal from '@/components/AppModal';
 
 interface SrcImage {
   src: string;
@@ -20,8 +24,16 @@ interface Props {
 }
 
 export default function AppCaptionImage({ image, caption }: Props) {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClick = (e: Event) => {
+    e.preventDefault();
+
+    setShowModal(true);
+  };
+
   return (
-    <div>
+    <div className="relative">
       <Image
         src={image.src}
         alt={image.alt}
@@ -37,6 +49,23 @@ export default function AppCaptionImage({ image, caption }: Props) {
           <p className="lg:w-2/3">{caption.description}</p>
         </div>
       </div>
+
+      <div className="absolute bottom-0 right-0">
+        <AppLink
+          href="#"
+          onClick={handleClick}
+        >
+          See more
+        </AppLink>
+      </div>
+      <AppModal
+        show={showModal}
+        id="caption-group-modal"
+        setShow={setShowModal}
+      >
+        Many of our projects are yet to go live and therefore cannot be published. To see more of
+        our portfolio, please contact us.
+      </AppModal>
     </div>
   );
 }
