@@ -5,8 +5,6 @@ export default function useActiveLink(routePath: string): MutableRefObject<boole
   const isActive = useRef(false);
   const pathname = usePathname();
 
-  console.log(pathname, routePath);
-
   isActive.current = routePath === pathname;
 
   return isActive;

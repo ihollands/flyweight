@@ -63,11 +63,11 @@ export default function AppHero({ blurb }: Props) {
               className="shadow-lg"
             >
               <Image
-                src={'/images/boxer_1.jpg'}
+                src={'/images/boxer_2.png'}
                 alt="Boxer"
                 fill
                 sizes="33vw"
-                quality={20}
+                quality={40}
                 style={{ objectFit: 'cover' }}
               />
             </div>
