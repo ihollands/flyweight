@@ -38,9 +38,10 @@ export default function ContactSection({ links }: Props) {
               className="shadow-lg"
             >
               <Image
-                src="/images/phone_1.jpg"
+                src="/images/phone_2.png"
                 alt="Phone"
                 fill={true}
+                quality={40}
                 style={{ objectFit: 'cover' }}
               />
             </div>
