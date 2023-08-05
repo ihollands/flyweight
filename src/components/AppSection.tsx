@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function AppSection({ className, children, navItem }: Props) {
-  const { elRef, isVisible } = useIntersection(
+  const { elRef, isActive } = useIntersection(
     { rootMargin: '-100px' },
     (entry, obs, setIsVisible) => {
       if (entry.isIntersecting) {
@@ -25,7 +25,7 @@ export default function AppSection({ className, children, navItem }: Props) {
       className={className}
       id={navItem.id}
     >
-      {children && children(isVisible, navItem)}
+      {children && children(isActive, navItem)}
     </div>
   );
 }

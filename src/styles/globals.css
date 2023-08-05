@@ -5,7 +5,7 @@
 @layer base {
   html,
   body {
-    @apply bg-white text-black font-normal tracking-tighter relative;
+    @apply bg-white text-black font-normal tracking-tighter leading-tight relative;
   }
 
   p {

@@ -1,6 +1,7 @@
 interface Bullet {
   head: string;
   body?: string;
+  sublist?: string[];
 }
 
 interface Col {
@@ -25,11 +26,23 @@ export default function AppColGroup({ cols }: Props) {
           <h3 className="mb-6">{title}</h3>
           {intro && <p className="text-base">{intro}</p>}
           <ul>
-            {items.map(({ head, body }, idx) => {
+            {items.map(({ head, body, sublist }, idx) => {
               return (
                 <li key={idx}>
                   {head ? <p className="mb-0 text-base">✹ {head}</p> : <br />}
                   {body && <p className="text-base last:pb-4">{body}</p>}
+                  {sublist && (
+                    <ul>
+                      {sublist.map((item, idx) => (
+                        <li
+                          key={idx}
+                          className="ml-4"
+                        >
+                          <span>-</span> {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               );
             })}

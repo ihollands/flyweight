@@ -41,7 +41,10 @@ export default function DefaultPage({ navItems, children }: Props) {
       enterTo="opacity-100"
     >
       <div className="relative space-y-20 lg:space-y-32 xl:space-y-40">
-        <AppHero blurb={defaultData.hero.blurb} />
+        <AppHero
+          blurb={defaultData.hero.blurb}
+          navItems={navItems}
+        />
 
         <main>
           <div className="pad-global mb-28 space-y-28 xl:mb-40 xl:space-y-40">{children}</div>

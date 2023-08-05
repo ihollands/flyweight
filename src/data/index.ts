@@ -8,7 +8,7 @@ const data = {
       items: [
         '<h3>All it takes is one great designer.</h3>',
         'We’ve eliminated the office and the agency overhead, connecting clients directly with the best design talent. This streamlined approach gives us three unfair advantages.',
-        '1) We’re not constrained by hiring geography. This opens up the talent pool, so we can be more discerning about who we invite to join our platform.</br>2) We are able to maintain the highest creative standards, while keeping costs to a minimum. The result is clients get more bang for their buck</br>3) With fewer mouths to feed, we as designers earn more per project than just about anywhere else.',
+        '1) We’re not constrained by hiring geography. This opens up the talent pool, so we can be more discerning about who we invite to join our platform.</br>2) We are able to maintain the highest creative standards, while keeping costs to a minimum. The result is clients get more bang for their buck.</br>3) With fewer mouths to feed, we as designers earn more per project than just about anywhere else (and happy designers make for happy clients).',
       ],
     },
     {
@@ -19,7 +19,7 @@ const data = {
       rows: [
         {
           head: 'Selective Admissions',
-          body: 'This is a carefully curated roster of award-winning designers. They are agency trained and tested and must go through a multi-step vetting process to join the platform.',
+          body: 'This is a carefully curated roster of award-winning designers. They are agency trained and tested, having gone through our multi-step vetting process.',
         },
         {
           head: 'One-on-One Relationships',
@@ -52,17 +52,27 @@ const data = {
         {
           title: 'Brand Identity',
           intro:
-            'We design and refine your company’s brand identity over three rounds of work, delivering a final presentation that will include the following:',
+            'We design and refine your company’s brand identity over three rounds of work, culminating in two deliverables:',
           items: [
-            { head: 'Logo & lock up' },
-            { head: 'Color palette' },
-            { head: 'Typography' },
-            { head: 'Graphic elements of design system' },
-            { head: '4-6 branded icons (or illustration style)' },
-            { head: 'Initial photo art direction' },
-            { head: '8-10 examples of design in action' },
-            { head: 'High-level design guidelines' },
+            {
+              head: 'A Design Guide',
+              body: 'A PDF document showcasing the brand identity and best design practices, including:',
+              sublist: [
+                'Logo & lock ups',
+                'Color palette',
+                'Typography',
+                'Graphic elements of design system',
+                '4-6 branded icons (or illustration style)',
+                'Initial photo art direction',
+                '8-10 examples of design in action',
+                'High-level guidelines',
+              ],
+            },
             { head: '', body: '' },
+            {
+              head: 'Logo Design Files',
+              body: 'Vectors that can be used in any design application',
+            },
             {
               body: 'Reach out to us to learn more about the program or the costs.',
             },
@@ -73,19 +83,19 @@ const data = {
           items: [
             {
               head: 'Mechanicals',
-              body: "Need to take things to print? Just give us the dieline and the legal essentials and we'll make the product pop (price per SKU).",
+              body: "Need to take things to print? We've got you covered. Just give us the dieline and the legal essentials and we'll make your product pop (price per SKU).",
             },
             {
-              head: 'Pitch deck (15-20 slides)',
-              body: 'We’ll give you the sizzle to go with the steak. All we need is the content and we’ll make your Powerpoint look like a million bucks.',
+              head: 'Pitch Deck (15-20 slides)',
+              body: 'We’ll give you the sizzle to go with the steak. All we need is the content and we’ll make your presentation look like a million bucks.',
             },
             {
-              head: 'Stock photo library (15-20 images)',
+              head: 'Stock Photo Library (15-20 images)',
               body: 'Don’t have money for a photo shoot yet? No problem. We can source and pull imagery for you to use on web, social media, and more.',
             },
             {
-              head: 'Others: company swag, Squarespace templates, social media posts, and more.',
-              body: '',
+              head: 'Others: company swag, website templates, social media posts, and more.',
+              body: 'Need a deliverable not listed here? Reach out to us.',
             },
           ],
         },
