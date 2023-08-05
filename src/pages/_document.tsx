@@ -16,12 +16,12 @@ export default function Document() {
 
         <meta
           property="og:title"
-          content="Flyweight: Brand Design"
+          content="Flyweight"
         />
 
         <meta
           property="og:description"
-          content="Leaner and meaner brand design. Heavy hitting creative power meets a nimble project approach."
+          content="Leaner and meaner brand design"
         />
 
         <meta

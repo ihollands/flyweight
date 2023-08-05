@@ -8,10 +8,11 @@ import useActiveLink from '@/hooks/activeLink';
 import useIntersection from '@/hooks/intersection';
 
 import AppLogo from '@/components/AppLogo';
+import AppNav from '@/components/AppNav';
 
 interface Props {
   blurb: string;
-  navItems?: NavItem[];
+  navItems: NavItem[];
 }
 
 const Title = () => {
@@ -31,15 +32,10 @@ const Title = () => {
   );
 };
 
-export default function AppHero({ blurb }: Props) {
-  const { elRef, isVisible } = useIntersection({ threshold: 0.999 }, (entry, obs, setIsVisible) => {
+export default function AppHero({ blurb, navItems }: Props) {
+  const { elRef, isActive } = useIntersection({ threshold: 0.999 }, (entry, obs, setIsVisible) => {
     setIsVisible(entry.isIntersecting);
   });
-
-  const transitionClasses = {
-    small: 'fixed left-2 2xl:left-4 top-2 w-20 xl:w-32',
-    large: 'absolute w-full',
-  };
 
   return (
     <div className="relative xl:min-h-[80vh]">
@@ -78,14 +74,30 @@ export default function AppHero({ blurb }: Props) {
           <div
             className={classNames(
               'z-10 transition-all duration-500',
-              !isVisible ? transitionClasses.small : transitionClasses.large
+              isActive ? 'absolute w-full' : 'fixed left-2 top-2 w-20 xl:w-32 2xl:left-4'
             )}
           >
-            <Title />
+            <div
+              className={classNames(
+                'w-full transition-all duration-500',
+                isActive ? 'w-full' : 'w-20 xl:w-32'
+              )}
+            >
+              <Title />
+            </div>
+            <AppNav
+              className={classNames(
+                'pointer-events-none absolute bottom-0 left-0 transform-gpu opacity-0 lg:pointer-events-auto lg:opacity-100',
+                isActive ? 'translate-y-12' : 'translate-x-40'
+              )}
+              navItems={navItems}
+              isActive={isActive}
+            />
           </div>
+
           <div
             ref={elRef}
-            className={classNames(!isVisible ? 'opacity-0' : 'opacity-100 delay-500')}
+            className="pointer-events-none opacity-0"
           >
             <Title />
           </div>

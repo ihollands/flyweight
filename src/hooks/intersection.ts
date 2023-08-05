@@ -14,7 +14,7 @@ type Handler = (
 
 const useIntersection = (options: Options = {}, handler: Handler) => {
   const elRef = useRef<any>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isActive, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry], obs) => {
@@ -28,7 +28,7 @@ const useIntersection = (options: Options = {}, handler: Handler) => {
 
   return {
     elRef,
-    isVisible,
+    isActive,
   };
 };
 
