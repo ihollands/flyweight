@@ -25,6 +25,8 @@ export default function DefaultPage({ navItems, children }: Props) {
   const [isMounted, setIsMounted] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
 
+  const contactNavItem = { id: 'contact_us', text: ['Contact Us'] };
+
   useEffect(() => {
     setTimeout(() => {
       setIsMounted(true);
@@ -43,30 +45,29 @@ export default function DefaultPage({ navItems, children }: Props) {
       <div className="relative space-y-20 lg:space-y-32 xl:space-y-40">
         <AppHero
           blurb={defaultData.hero.blurb}
-          navItems={navItems}
+          navItems={[...navItems, contactNavItem]}
         />
 
         <main>
           <div className="pad-global mb-28 space-y-28 xl:mb-40 xl:space-y-40">{children}</div>
         </main>
 
-        <AppSection navItem={{ id: 'contact_us', text: ['Contact Us'] }}>
+        <AppSection navItem={contactNavItem}>
           {(isVisible, navItem) => (
             <>
-              <AppSectionHeader
-                className="pad-global"
-                navItem={navItem}
-                isVisible={isVisible}
-              />
-
-              <ContactSection links={defaultData.contact.links} />
+              <ContactSection links={defaultData.contact.links}>
+                <AppSectionHeader
+                  navItem={navItem}
+                  isVisible={isVisible}
+                />
+              </ContactSection>
             </>
           )}
         </AppSection>
       </div>
 
       <Transition.Child
-        className="fixed right-2 top-2 z-10 flex gap-2"
+        className="fixed right-2 top-2 z-10 flex gap-2 2xl:right-4"
         enter="transition-opacity delay-1000 duration-1000"
         enterFrom="opacity-0"
         enterTo="opacity-100"

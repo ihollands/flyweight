@@ -36,10 +36,12 @@ export default function Home() {
               navItem={navItem}
               isVisible={isVisible}
             />
-            <AppPBlock
-              isVisible={isVisible}
-              items={sections[0].items as AppPBlockProps['items']}
-            />
+            <div>
+              <AppPBlock
+                isVisible={isVisible}
+                items={sections[0].items as AppPBlockProps['items']}
+              />
+            </div>
           </>
         )}
       </AppSection>

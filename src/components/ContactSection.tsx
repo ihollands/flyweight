@@ -6,52 +6,45 @@ import type { NavItem } from '@/types/navigation';
 
 interface Props {
   links: ExtLink[];
+  children: any;
 }
 
 import AppLogo from '@/components/AppLogo';
 import AppLink from '@/components/AppLink';
 
-export default function ContactSection({ links }: Props) {
+export default function ContactSection({ links, children }: Props) {
   return (
-    <div className="relative">
-      <div className="pad-global">
-        <p
-          className="text-match-break relative z-10"
-          style={{ lineHeight: 1.02 }}
-        >
-          <span className="relative flex flex-col items-start leading-none">
-            {links.map(({ href, text }, idx: number) => (
-              <AppLink
-                href={href}
-                key={idx}
-              >
-                {text}
-              </AppLink>
-            ))}
-          </span>
-        </p>
-
-        <div className="z-initial relative">
-          <div className="absolute right-0 top-0 w-1/3 -translate-y-[60%] md:w-1/4 lg:right-[148px] lg:w-1/5">
-            <div
-              style={{ paddingBottom: '100%' }}
-              className="shadow-lg"
+    <div className="pad-global relative">
+      {children}
+      <p
+        className="text-match-break relative z-10"
+        style={{ lineHeight: 1.02 }}
+      >
+        <span className="relative flex flex-col items-start leading-none">
+          {links.map(({ href, text }, idx: number) => (
+            <AppLink
+              href={href}
+              key={idx}
             >
-              <Image
-                src="/images/phone_2.png"
-                alt="Phone"
-                fill={true}
-                quality={40}
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-          </div>
+              {text}
+            </AppLink>
+          ))}
+        </span>
+      </p>
 
-          <div className="relative z-10">
-            <AppLogo />
-          </div>
+      <div className="absolute right-0 top-0 w-1/3 md:w-1/4 lg:right-[148px] lg:w-1/5">
+        <div style={{ paddingBottom: '100%' }}>
+          <Image
+            src="/images/phone_2.png"
+            alt="Phone"
+            fill={true}
+            quality={40}
+            style={{ objectFit: 'cover' }}
+          />
         </div>
       </div>
+
+      <AppLogo className="relative z-10" />
     </div>
   );
 }

@@ -6,7 +6,8 @@ const data = {
         text: ['For Designers'],
       },
       items: [
-        'We’re a group of prizefighting designers looking to advance our collective ambitions and are always in search of others to join our team. In the interest of transparency, we want to be clear that while Flyweight does take a fee, designers take home the majority of the profits (a five-figure sum for each project). The money the organization makes goes toward business / resource management, so all we have to do is focus on design.',
+        '<h3>Less stress, more profit.</h3>',
+        'We manage all the tough stuff, so all you have to do is focus on design. Our unique approach has been strategically developed to support you throughout the creative process, while making projects both highly profitable and enjoyable. (Designers take home a five figure sum for each project, earning more than they would just about anywhere else).',
       ],
     },
     {
@@ -32,8 +33,8 @@ const data = {
           body: 'Sometimes, you just need to chat things through. We provide a direct line of communication to strategists and other designers to pressure test your thinking.',
         },
         {
-          head: 'Billing & Payment',
-          body: 'It sucks having to chase down clients and project payments. We manage all the billing and pay you directly, so you’re not left playing the role of debt collector.',
+          head: 'Contracts & Billing',
+          body: 'It sucks having to chase down clients for signatures and payments. We deal with all the contractual fine print, invoicing, and collection, and pay you directly.',
         },
       ],
     },

@@ -9,7 +9,7 @@
   }
 
   p {
-    @apply text-base mb-6 last:mb-0;
+    @apply text-base 3xl:text-lg mb-6 last:mb-0;
   }
 
   h2 {
@@ -17,7 +17,7 @@
   }
 
   h3 {
-    @apply text-2xl lg:text-3xl mb-3 last:mb-0;
+    @apply text-xl lg:text-2xl mb-3 last:mb-0;
   }
 
   input,

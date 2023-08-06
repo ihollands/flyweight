@@ -15,7 +15,7 @@ const transitionClass = transitionVisible([
 
 export default function AppPBlock({ className, items, isVisible }: Props) {
   return (
-    <div className={classNames(className, 'w-full text-3xl')}>
+    <div className={classNames(className, 'w-full xl:pt-4')}>
       {items.map((item: string, idx: number) => (
         <p
           key={idx}
