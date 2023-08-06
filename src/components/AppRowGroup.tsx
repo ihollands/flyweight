@@ -8,6 +8,7 @@ interface Row {
 interface Props {
   isVisible: boolean;
   rows: Row[];
+  children?: any;
 }
 
 const transitionClass = transitionVisible([
@@ -16,23 +17,27 @@ const transitionClass = transitionVisible([
   'opacity-100 translate-y-0',
 ]);
 
-export default function AppRowGroup({ isVisible, rows }: Props) {
+export default function AppRowGroup({ isVisible, rows, children }: Props) {
   const itemIdxRange = [...Array.from({ length: rows.length }, (x, i) => i)];
 
   return (
     <div>
-      {rows.map(({ head, body }, idx) => (
-        <div
-          key={idx}
-          className={transitionClass(isVisible)}
-          style={{
-            transitionDelay: `${750 + idx * 200}ms`,
-          }}
-        >
-          <h3 className="w-full lg:mb-0">✹ {head}</h3>
-          <p className="w-full pr-4 text-base">{body}</p>
-        </div>
-      ))}
+      <div>
+        {rows.map(({ head, body }, idx) => (
+          <div
+            key={idx}
+            className={transitionClass(isVisible)}
+            style={{
+              transitionDelay: `${750 + idx * 200}ms`,
+            }}
+          >
+            <h3 className="w-full lg:mb-0">✹ {head}</h3>
+            <p className="w-full pr-4 text-base">{body}</p>
+          </div>
+        ))}
+      </div>
+
+      {children && <div className="mt-16">{children}</div>}
     </div>
   );
 }
