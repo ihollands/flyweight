@@ -16,9 +16,9 @@ export default function AppLink({ children, className, href, ...rest }: Props) {
       {...rest}
     >
       <span className="transition-all group-hover:text-accent-blue">{children}</span>
-      <div className="absolute bottom-0 left-full h-full translate-x-0.5">
+      <span className="absolute bottom-0 left-full h-full translate-x-0.5">
         <ArrowDownRightIcon className="absolute bottom-0.5 h-3/5 -translate-x-full -translate-y-full transform-gpu stroke-[3px] opacity-0 transition-all group-hover:transform-none group-hover:text-accent-blue group-hover:opacity-100" />
-      </div>
+      </span>
     </Link>
   );
 }

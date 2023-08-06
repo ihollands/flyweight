@@ -8,7 +8,7 @@ const data = {
       items: [
         '<h3>All it takes is one great designer.</h3>',
         'We’ve eliminated the office and the agency overhead, connecting clients directly with the best design talent. This streamlined approach gives us three unfair advantages.',
-        '1) We’re not constrained by hiring geography. This opens up the talent pool, so we can be more discerning about who we invite to join our platform.</br>2) We are able to maintain the highest creative standards, while keeping costs to a minimum. The result is clients get more bang for their buck.</br>3) With fewer mouths to feed, we as designers earn more per project than just about anywhere else (and happy designers make for happy clients).',
+        '1) We’re not constrained by hiring geography. This opens up the talent pool, so we can be more discerning about who we invite to join our platform.</br>2 )Without the typical studio expenditures, we’re able to maintain the highest creative standards at a lower cost (i.e. clients get more bang for their buck).</br>3) With fewer mouths to feed, designers earn more per project than just about anywhere else. (We believe happy designers make for happier clients).',
       ],
     },
     {
@@ -19,7 +19,7 @@ const data = {
       rows: [
         {
           head: 'Selective Admissions',
-          body: 'This is a carefully curated roster of award-winning designers. They are agency trained and tested, having gone through our multi-step vetting process.',
+          body: 'This is a carefully curated roster of award-winning designers. They are agency trained and tested and must go through a multi-step vetting process to join the platform.',
         },
         {
           head: 'One-on-One Relationships',
@@ -27,11 +27,11 @@ const data = {
         },
         {
           head: 'Flexible Timing',
-          body: 'Some of us work at other design studios (this is a second gig), so we ask clients to be accommodating when it comes to timelines and meeting outside of normal working hours.',
+          body: 'For some of us this is a second gig. As a result, we ask clients to be accommodating when it comes to timelines and meeting outside of normal working hours.',
         },
         {
           head: 'Detailed Program',
-          body: 'We have carefully outlined design deliverables, predetermined check-ins, and sequenced presentations. This allows us to eliminate the project manager and keep the team lean.',
+          body: 'We have carefully outlined design deliverables, predetermined check-ins, and sequenced presentations. This allows us to keep the team lean and limit project management costs.',
         },
         {
           head: 'Flat-Fee Structure',
@@ -39,14 +39,14 @@ const data = {
         },
         {
           head: 'Online Interface',
-          body: 'We’ve made it easy to connect and collaborate. All communication, meetings, and presentations are all run through a simple email interface and Google Meet.',
+          body: 'We’ve made it easy to connect and collaborate. All communication, meetings, and presentations are run through a simple email interface and Google Meet.',
         },
       ],
     },
     {
       navItem: {
         id: 'deliverables',
-        text: ['The Deliverables'],
+        text: ['Deliverables'],
       },
       cols: [
         {
@@ -73,9 +73,6 @@ const data = {
               head: 'Logo Design Files',
               body: 'Vectors that can be used in any design application',
             },
-            {
-              body: 'Reach out to us to learn more about the program or the costs.',
-            },
           ],
         },
         {
@@ -94,8 +91,8 @@ const data = {
               body: 'Don’t have money for a photo shoot yet? No problem. We can source and pull imagery for you to use on web, social media, and more.',
             },
             {
-              head: 'Others: company swag, website templates, social media posts, and more.',
-              body: 'Need a deliverable not listed here? Reach out to us.',
+              head: 'Others: company swag, web, social media posts, print layouts, and more',
+              body: 'Need a deliverable not listed? Ask us.',
             },
           ],
         },
@@ -113,7 +110,7 @@ const data = {
         },
         {
           head: "Respect designers' time.",
-          body: 'Our proposition is predicated on simplicity and efficiency to ensure both clients and creatives get the most out of the engagement.',
+          body: 'Feedback is always welcome. We just remind clients our proposition is based on efficiency and decisiveness. This ensures both parties get the most out of the engagement.',
         },
         {
           head: 'Dial creativity up to 11.',
@@ -125,7 +122,7 @@ const data = {
         },
         {
           head: 'No pitching.',
-          body: 'We’re not aspiring designers trying to build a portfolio. We are professionals.  We don’t design things for free. If you’re interested in what we can do, buy a ticket and enjoy the show.',
+          body: 'We’re not aspiring designers. We’re professionals.  We don’t design things for free. If you’re interested in what we can do, buy a ticket and enjoy the show.',
         },
         {
           head: 'Be kind and collaborative.',
@@ -139,7 +136,7 @@ const data = {
         text: ['Our Portfolio'],
       },
       image: {
-        src: '/images/lost_and_found.jpg',
+        src: '/images/lost_and_found_1.jpg',
         alt: 'Lost and Found',
         width: 1337,
         height: 760,

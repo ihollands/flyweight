@@ -46,7 +46,7 @@ export default function AppNumGroup({ isVisible, items }: Props) {
             <p className="text-2xl lg:text-3xl">{head}</p>
           </div>
           <p
-            className={classNames('text-base xl:max-w-sm', transitionClass(isVisible))}
+            className={classNames('xl:max-w-sm', transitionClass(isVisible))}
             style={{
               transitionDelay: `${600 + transitionOrder[idx] * 100}ms`,
             }}

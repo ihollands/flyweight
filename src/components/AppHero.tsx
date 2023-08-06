@@ -54,10 +54,7 @@ export default function AppHero({ blurb, navItems }: Props) {
           />
 
           <div className="absolute right-2 w-1/3 md:right-[121px] lg:right-[156px]">
-            <div
-              style={{ paddingBottom: '114.4%' }}
-              className="shadow-lg"
-            >
+            <div style={{ paddingBottom: '114.4%' }}>
               <Image
                 src={'/images/boxer_2.png'}
                 alt="Boxer"

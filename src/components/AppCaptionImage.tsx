@@ -50,7 +50,7 @@ export default function AppCaptionImage({ image, caption }: Props) {
         </div>
       </div>
 
-      <div className="absolute bottom-0 right-0">
+      <div className="text-right xl:mt-4">
         <AppLink
           href="#"
           onClick={handleClick}

@@ -1,6 +1,10 @@
-export default function AppLogo() {
+interface Props {
+  className?: string;
+}
+
+export default function AppLogo({ className }: Props) {
   return (
-    <div>
+    <div className={className}>
       <svg
         version="1.1"
         viewBox="0 0 1344 324"
