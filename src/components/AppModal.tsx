@@ -12,10 +12,10 @@ interface Props {
 
 export default function AppModal({ children, id, node, show = false, setShow }: Props) {
   useEffect(() => {
-    document.body.style.overflow = show ? 'hidden' : 'visible';
+    document.body.style.overflow = show ? 'hidden' : 'auto';
 
     return () => {
-      document.body.style.overflow = 'visible';
+      document.body.style.overflow = 'auto';
     };
   }, [show]);
 

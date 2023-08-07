@@ -8,7 +8,7 @@ const data = {
       items: [
         '<h3>All it takes is one great designer.</h3>',
         'We’ve eliminated the office and the agency overhead, connecting clients directly with the best design talent. This streamlined approach gives us three unfair advantages.',
-        '1) We’re not constrained by hiring geography. This opens up the talent pool, so we can be more discerning about who we invite to join our platform.</br>2 )Without the typical studio expenditures, we’re able to maintain the highest creative standards at a lower cost (i.e. clients get more bang for their buck).</br>3) With fewer mouths to feed, designers earn more per project than just about anywhere else. (We believe happy designers make for happier clients).',
+        '1) We’re not constrained by hiring geography. This opens up the talent pool, so we can be more discerning about who we invite to join our platform.</br>2) Without the typical studio expenditures, we’re able to maintain the highest creative standards at a lower cost (i.e. clients get more bang for their buck).</br>3) With fewer mouths to feed, designers earn more per project than just about anywhere else. (We believe happy designers make for happier clients).',
       ],
     },
     {
