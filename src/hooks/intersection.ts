@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 interface Options {
   root?: HTMLElement;
   rootMargin?: string;
-  threshold?: number;
+  threshold?: number | number[];
 }
 
 type Handler = (

@@ -42,7 +42,7 @@ export default function DefaultPage({ navItems, children }: Props) {
       enterFrom="opacity-0"
       enterTo="opacity-100"
     >
-      <div className="relative space-y-20 lg:space-y-32 xl:space-y-40">
+      <div className="relative space-y-20 before:fixed before:inset-x-0 before:top-0 before:z-10 before:h-[4.75rem] before:bg-white lg:space-y-32 xl:space-y-40">
         <AppHero
           blurb={defaultData.hero.blurb}
           navItems={[...navItems, contactNavItem]}
@@ -66,13 +66,7 @@ export default function DefaultPage({ navItems, children }: Props) {
         </AppSection>
       </div>
 
-      <Transition.Child
-        className="fixed right-2 top-2 z-10 flex gap-2 2xl:right-4"
-        enter="transition-opacity delay-1000 duration-1000"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        entered="opacity-100"
-      >
+      <div className="fixed right-2 top-2 z-10 flex gap-2 2xl:right-4">
         <button
           type="button"
           className="btn-dark"
@@ -86,7 +80,7 @@ export default function DefaultPage({ navItems, children }: Props) {
         >
           I&apos;m a Creative
         </Link>
-      </Transition.Child>
+      </div>
 
       <AppModal
         show={showContactModal}

@@ -18,7 +18,7 @@ export default function AppNav({ className, navItems }: Props) {
   };
   return (
     <nav className={classNames('w-full', className)}>
-      <ul className={classNames('flex w-10/12 justify-between gap-8 whitespace-nowrap')}>
+      <ul className={classNames('flex w-[90%] justify-between gap-8 whitespace-nowrap')}>
         {navItems.map(({ id, text }) => {
           const anchorId = `#${id}`;
 

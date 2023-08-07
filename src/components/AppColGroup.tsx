@@ -31,15 +31,15 @@ export default function AppColGroup({ cols }: Props) {
             key={idx}
             className="lg:w-1/2 lg:odd:pr-10 lg:even:-ml-11"
           >
-            <div className="max-w-lg xl:max-w-2xl 3xl:max-w-3xl">
+            <div className="lg:max-w-[36rem]">
               <h3 className="mb-6">{title}</h3>
-              {intro && <p className="text-base">{intro}</p>}
+              {intro && <p>{intro}</p>}
               <ul>
                 {items.map(({ head, body, sublist }, idx) => {
                   return (
                     <li key={idx}>
                       {head ? <p className="mb-0 text-base">✹ {head}</p> : <br />}
-                      {body && <p className="text-base last:pb-4">{body}</p>}
+                      {body && <p className="last:pb-4">{body}</p>}
                       {sublist && (
                         <ul>
                           {sublist.map((item, idx) => (

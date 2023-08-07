@@ -36,7 +36,7 @@ export default function Home() {
               navItem={navItem}
               isVisible={isVisible}
             />
-            <div>
+            <div className="w-full">
               <AppPBlock
                 isVisible={isVisible}
                 items={sections[0].items as AppPBlockProps['items']}

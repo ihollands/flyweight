@@ -5,7 +5,7 @@
 @layer base {
   html,
   body {
-    @apply bg-white text-black font-normal tracking-tighter leading-tight relative;
+    @apply m-0 p-0 w-full h-full overflow-x-hidden bg-white text-black font-normal tracking-tighter leading-tight relative;
   }
 
   p {

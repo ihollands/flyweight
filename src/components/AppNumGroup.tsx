@@ -43,7 +43,7 @@ export default function AppNumGroup({ isVisible, items }: Props) {
             }}
           >
             <p className="mb-1 text-4xl font-medium lg:mb-2">{displayNum(idx)}</p>
-            <p className="text-2xl lg:text-3xl">{head}</p>
+            <h3>{head}</h3>
           </div>
           <p
             className={classNames('xl:max-w-sm', transitionClass(isVisible))}

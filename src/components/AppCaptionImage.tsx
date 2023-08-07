@@ -42,15 +42,15 @@ export default function AppCaptionImage({ image, caption }: Props) {
         className="w-full"
         quality={80}
       />
-      <div className="mt-6">
-        <h3 className="mb-0">{caption.title}</h3>
-        <div className="lg:flex">
+      <div className="mt-6 lg:flex">
+        <h3 className="mb-1 lg:w-1/3">{caption.title}</h3>
+        <div className="lg:flex lg:w-2/3 lg:pt-3">
           <p className="lg:w-1/3">{caption.subtitle}</p>
           <p className="lg:w-2/3">{caption.description}</p>
         </div>
       </div>
 
-      <div className="text-right xl:mt-4">
+      <div className="relative mr-4 mt-6 text-right">
         <AppLink
           href="#"
           onClick={handleClick}
