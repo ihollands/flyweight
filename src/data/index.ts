@@ -7,8 +7,7 @@ const data = {
       },
       items: [
         '<h3>All it takes is one great designer.</h3>',
-        'We’ve eliminated the office and the agency overhead, connecting clients directly with the best design talent. This streamlined approach gives us three unfair advantages.',
-        '1) We’re not constrained by hiring geography. This opens up the talent pool, so we can be more discerning about who we invite to join our platform.</br>2) Without the typical studio expenditures, we’re able to maintain the highest creative standards at a lower cost (i.e. clients get more bang for their buck).</br>3) With fewer mouths to feed, designers earn more per project than just about anywhere else. (We believe happy designers make for happier clients).',
+        '<h3>No agency, no office, no overhead. We connect companies directly with the best creative talent to make top tier brand design more accessible.</h3>',
       ],
     },
     {
@@ -58,14 +57,14 @@ const data = {
               head: 'A Design Guide',
               body: 'A PDF document showcasing the brand identity and best design practices, including:',
               sublist: [
-                'Logo & lock ups',
+                'Logo',
                 'Color palette',
                 'Typography',
-                'Graphic elements of design system',
+                'Additional graphic elements or layouts',
                 '4-6 branded icons (or illustration style)',
-                'Initial photo art direction',
+                'Initial photography art direction',
                 '8-10 examples of design in action',
-                'High-level guidelines',
+                'High-level design guardrails',
               ],
             },
             { head: '', body: '' },
@@ -91,8 +90,8 @@ const data = {
               body: 'Don’t have money for a photo shoot yet? No problem. We can source and pull imagery for you to use on web, social media, and more.',
             },
             {
-              head: 'Others: company swag, web, social media posts, print layouts, and more',
-              body: 'Need a deliverable not listed? Ask us.',
+              head: 'Reach out to us about things like web, social media templates, and more...',
+              body: '',
             },
           ],
         },
@@ -105,8 +104,8 @@ const data = {
       },
       items: [
         {
-          head: 'No hand holding.',
-          body: 'Of course you can ask questions, but if you’re someone that requires lots of assistance and personal attention, you’re probably better off at an agency.',
+          head: 'Come prepared.',
+          body: 'Of course we provide client support, but if you’re someone that requires lots of oversight and personal attention, you’re probably better off at an agency.',
         },
         {
           head: "Respect designers' time.",
@@ -114,7 +113,7 @@ const data = {
         },
         {
           head: 'Dial creativity up to 11.',
-          body: 'We only work with clients that are open and willing to push creative limits. If you need an Illustrator monkey, or already “know what you want” this is not the place for you.',
+          body: 'We’re here to create new, unique, and enduring brand identities, not trendy design. Clients must come with an open mind and a willingness to push creative limits.',
         },
         {
           head: 'Quality over quantity.',
@@ -122,7 +121,7 @@ const data = {
         },
         {
           head: 'No pitching.',
-          body: 'We’re not aspiring designers. We’re professionals.  We don’t design things for free. If you’re interested in what we can do, buy a ticket and enjoy the show.',
+          body: 'We’re not aspiring designers. We’re professionals. We don’t design things for free. If you’re interested in what we can do, buy a ticket and enjoy the show.',
         },
         {
           head: 'Be kind and collaborative.',

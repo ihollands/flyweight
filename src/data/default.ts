@@ -17,6 +17,10 @@ const data = {
         href: 'https://www.instagram.com/flyweightdesign/',
         text: 'Instagram',
       },
+      {
+        href: 'https://www.linkedin.com/company/flyweight-design',
+        text: 'LinkedIn',
+      },
     ],
   },
   hero: {

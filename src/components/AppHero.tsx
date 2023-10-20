@@ -68,7 +68,7 @@ export default function AppHero({ blurb, navItems }: Props) {
             dangerouslySetInnerHTML={{ __html: blurb }}
           />
 
-          <div className="absolute right-0 w-[30%] md:right-[6.75rem] lg:right-[8.75rem] 2xl:right-[9.25rem] 2xl:w-[500px]">
+          <div className="absolute right-0 w-[30%] md:right-[7.5rem] lg:right-[9.75rem] 2xl:right-[10.25rem] 2xl:w-[500px]">
             <div
               className="border border-orange-500"
               style={{ paddingBottom: '114.4%' }}

@@ -41,13 +41,13 @@ export default function AppColGroup({ cols }: Props) {
                       {head ? <p className="mb-0 text-base">✹ {head}</p> : <br />}
                       {body && <p className="last:pb-4">{body}</p>}
                       {sublist && (
-                        <ul>
+                        <ul className="-mt-4">
                           {sublist.map((item, idx) => (
                             <li
                               key={idx}
                               className="ml-4"
                             >
-                              <span>-</span> {item}
+                              {item}
                             </li>
                           ))}
                         </ul>
